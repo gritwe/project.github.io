@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Теория фитнеса - FitGy</title>
+    <link rel="stylesheet" href="../../css/theory/theory-1.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="script" href="../../js/auth-state.js">
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <nav class="nav">
+                <ul class="nav-list">
+                    <li class="nav-logo">
+                        <a href="../index.html">
+                            <img src="../../img/logo/logo.png" alt="Логотип FitGy">
+                        </a>
+                    </li>
+
+                    <ul class="nav-center">
+                        <li><a href="../body.html">3D-Модель</a></li>
+                        <li><a href="../training.html">Тренировки</a></li>
+                        <li><a href="../food.html">Питание</a></li>
+                        <li><a href="../equip.html">Экипировка</a></li>
+                        <li><a href="../place.html">Места тренировок</a></li>
+                    </ul>
+
+                    <li class="nav-auth">
+                        <a href="../login.html" id="auth-icon" class="auth-icon-hidden">
+                            <img src="../../img/logo/auth.png" alt="Авторизация">
+                        </a>
+                        <a href="../profile.html" id="profile-icon" class="auth-icon-hidden">
+                            <img src="../../img/logo/profile.png" alt="Профиль">
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="main">
+        <section class="topic-header">
+            <div class="container">
+                <div class="page-header">
+                    <h1 class="page-title">Мышечные волокна: типы и функции</h1>
+                    <p class="page-description">
+                        Понимание структуры мышц для эффективных тренировок
+                    </p>
+                </div>
+                <a href="../training.html" class="back-button">
+                    <i class="fas fa-arrow-left"></i> Назад к темам
+                </a>
+            </div>
+        </section>
+
+        <!-- Контент темы -->
+        <section class="topic-content">
+            <div class="container">
+                <article class="article">
+                    <!-- Введение -->
+                    <section class="section">
+                        <h2><i class="fas fa-star"></i> Введение</h2>
+                        <p>Мышцы человека — это не просто однородная масса, а сложная система, состоящая из разных типов волокон. Понимание этих различий — ключ к созданию эффективных тренировочных программ.</p>
+                        
+                        <div class="info-box">
+                            <div class="info-icon">
+                                <i class="fas fa-lightbulb"></i>
+                            </div>
+                            <div class="info-content">
+                                <h4>Ключевой факт</h4>
+                                <p>Соотношение типов мышечных волокон во многом определяется генетикой, но может меняться под воздействием тренировок.</p>
+                            </div>
+                        </div>
+                    </section>
+
+                    <!-- Основной контент -->
+                    <section class="section-main">
+                        <h2><i class="fas fa-anatomy"></i> Основные типы мышечных волокон</h2>
+                        
+                        <div class="content-grid">
+                            <div class="content-card type1">
+                                <div class="card-header">
+                                    <h3>Тип I: Медленные волокна</h3>
+                                    <span class="card-badge red">Медленные</span>
+                                </div>
+                                <div class="card-body">
+                                    <ul>
+                                        <li><strong>Цвет:</strong> Красные (богаты миоглобином)</li>
+                                        <li><strong>Сокращение:</strong> Медленное, устойчивое</li>
+                                        <li><strong>Выносливость:</strong> Очень высокая</li>
+                                        <li><strong>Энергия:</strong> Аэробный метаболизм</li>
+                                        <li><strong>Функция:</strong> Длительная активность</li>
+                                    </ul>
+                                </div>
+                                <div class="card-examples">
+                                    <h4>Примеры активности:</h4>
+                                    <p>Бег на длинные дистанции, плавание, велоспорт, поддержание осанки</p>
+                                </div>
+                            </div>
+
+                            <div class="content-card type2">
+                                <div class="card-header">
+                                    <h3>Тип IIa: Быстрые окислительно-гликолитические</h3>
+                                    <span class="card-badge yellow">Средние</span>
+                                </div>
+                                <div class="card-body">
+                                    <ul>
+                                        <li><strong>Цвет:</strong> Розовые</li>
+                                        <li><strong>Сокращение:</strong> Быстрое</li>
+                                        <li><strong>Выносливость:</strong> Средняя</li>
+                                        <li><strong>Энергия:</strong> Аэробный и анаэробный</li>
+                                        <li><strong>Функция:</strong> Умеренная нагрузка</li>
+                                    </ul>
+                                </div>
+                                <div class="card-examples">
+                                    <h4>Примеры активности:</h4>
+                                    <p>Средние дистанции в беге, плавание на 200-400м, большинство силовых упражнений</p>
+                                </div>
+                            </div>
+
+                            <div class="content-card type3">
+                                <div class="card-header">
+                                    <h3>Тип IIb/x: Быстрые гликолитические</h3>
+                                    <span class="card-badge blue">Быстрые</span>
+                                </div>
+                                <div class="card-body">
+                                    <ul>
+                                        <li><strong>Цвет:</strong> Белые</li>
+                                        <li><strong>Сокращение:</strong> Очень быстрое</li>
+                                        <li><strong>Выносливость:</strong> Низкая</li>
+                                        <li><strong>Энергия:</strong> Анаэробный метаболизм</li>
+                                        <li><strong>Функция:</strong> Взрывная сила</li>
+                                    </ul>
+                                </div>
+                                <div class="card-examples">
+                                    <h4>Примеры активности:</h4>
+                                    <p>Спринт, тяжелая атлетика, прыжки, броски</p>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+                    <!-- Практическое применение -->
+                    <section class="section">
+                        <h2><i class="fas fa-dumbbell"></i> Практическое применение в тренировках</h2>
+                        
+                        <div class="training-tips">
+                            <div class="tip-card">
+                                <div class="tip-icon">
+                                    <i class="fas fa-running"></i>
+                                </div>
+                                <h4>Для развития выносливости</h4>
+                                <p>Тренируйте медленные волокна: длительные низкоинтенсивные нагрузки (60-70% от максимума)</p>
+                                <ul class="tip-details">
+                                    <li>Бег: 30+ минут в умеренном темпе</li>
+                                    <li>Велосипед: 45+ минут</li>
+                                    <li>Плавание: длительные заплывы</li>
+                                </ul>
+                            </div>
+
+                            <div class="tip-card">
+                                <div class="tip-icon">
+                                    <i class="fas fa-weight-hanging"></i>
+                                </div>
+                                <h4>Для роста мышц (гипертрофии)</h4>
+                                <p>Активируйте все типы волокон: средние веса, 8-12 повторений, умеренный темп</p>
+                                <ul class="tip-details">
+                                    <li>Подходы: 3-4 на упражнение</li>
+                                    <li>Отдых: 60-90 секунд</li>
+                                    <li>Частота: 3-4 раза в неделю</li>
+                                </ul>
+                            </div>
+
+                            <div class="tip-card">
+                                <div class="tip-icon">
+                                    <i class="fas fa-bolt"></i>
+                                </div>
+                                <h4>Для развития силы и скорости</h4>
+                                <p>Фокусируйтесь на быстрых волокнах: тяжелые веса, мало повторений, взрывной темп</p>
+                                <ul class="tip-details">
+                                    <li>Повторения: 1-5</li>
+                                    <li>Отдых: 3-5 минут</li>
+                                    <li>Интенсивность: 85-100% от максимума</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </section>
+
+                    <!-- Научные факты -->
+                    <section class="section">
+                        <h2><i class="fas fa-flask"></i> Научные факты</h2>
+                        
+                        <div class="facts-grid">
+                            <div class="fact-item">
+                                <div class="fact-number">1</div>
+                                <div class="fact-content">
+                                    <h4>Генетическая предрасположенность</h4>
+                                    <p>У элитных марафонцев до 90% медленных волокон, у спринтеров — до 80% быстрых.</p>
+                                </div>
+                            </div>
+
+                            <div class="fact-item">
+                                <div class="fact-number">2</div>
+                                <div class="fact-content">
+                                    <h4>Адаптация к тренировкам</h4>
+                                    <p>Тип IIb может превращаться в тип IIa под воздействием выносливостных тренировок.</p>
+                                </div>
+                            </div>
+
+                            <div class="fact-item">
+                                <div class="fact-number">3</div>
+                                <div class="fact-content">
+                                    <h4>Возрастные изменения</h4>
+                                    <p>С возрастом происходит потеря быстрых волокон, что объясняет снижение силы.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+                    <!-- Ключевые выводы -->
+                    <section class="section key-points">
+                        <h2><i class="fas fa-graduation-cap"></i> Ключевые выводы</h2>
+                        
+                        <div class="points-list">
+                            <div class="point-item">
+                                <div class="point-icon">
+                                    <i class="fas fa-check-circle"></i>
+                                </div>
+                                <div class="point-content">
+                                    <h4>Разные цели — разные подходы</h4>
+                                    <p>Выбор типа тренировки должен соответствовать целевым мышечным волокнам.</p>
+                                </div>
+                            </div>
+
+                            <div class="point-item">
+                                <div class="point-icon">
+                                    <i class="fas fa-check-circle"></i>
+                                </div>
+                                <div class="point-content">
+                                    <h4>Сбалансированное развитие</h4>
+                                    <p>Комбинирование разных типов нагрузок дает наиболее гармоничное развитие.</p>
+                                </div>
+                            </div>
+
+                            <div class="point-item">
+                                <div class="point-icon">
+                                    <i class="fas fa-check-circle"></i>
+                                </div>
+                                <div class="point-content">
+                                    <h4>Индивидуальный подход</h4>
+                                    <p>Учитывайте свой генетический профиль при составлении тренировочной программы.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                </article>
+            </div>
+        </section>
+
+        <!-- Блок изучения (показывается когда тема еще НЕ изучена) -->
+        <section class="completion-section section-end" id="completion-section">
+                <div class="completion-content">
+                    <div class="completion-icon">
+                        <i class="fas fa-graduation-cap"></i>
+                    </div>
+                    <h3>Изучение завершено?</h3>
+                    <p>Нажмите кнопку ниже, чтобы отметить тему как изученную и обновить ваш прогресс.</p>
+                    
+                    <button id="mark-completed-btn" class="complete-button">
+                        <i class="fas fa-check-circle"></i> Отметить как изученное
+                    </button>
+                    
+                    <p class="completion-note">
+                        <i class="fas fa-info-circle"></i> Прогресс сохранится в вашем профиле
+                    </p>
+                </div>
+        </section>
+
+        <!-- Блок повторения (показывается когда тема уже изучена) -->
+        <section class="repeat-section section-end" id="repeat-section">
+                <div class="completion-content">
+                    <div class="completion-icon">
+                        <i class="fas fa-check-circle"></i>
+                    </div>
+                    <h3>Тема изучена!</h3>
+                    <p>Вы уже изучили эту тему. Хотите повторить материал или вернуться к списку тем?</p>
+                    
+                    <div class="action-buttons">
+                        <button id="repeat-topic-btn" class="repeat-button">
+                            <i class="fas fa-redo"></i> Повторить тему
+                        </button>
+                        <a href="../training.html?section=theory" class="back-to-topics-button">
+                            <i class="fas fa-list"></i> Вернуться к темам
+                        </a>
+                    </div>
+                </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container-footer">
+            <div class="footer-content">
+                <div class="footer-links">
+                    <h4>Разделы</h4>
+                    <a href="../body.html">3D-Модель</a>
+                    <a href="../training.html">Тренировки</a>
+                    <a href="../place.html">Места посещения</a>
+                </div>
+                <div class="footer-links">
+                    <h4>Ресурсы</h4>
+                    <a href="../food.html">Питание</a>
+                    <a href="../equip.html">Экипировка</a>
+                    <a href="../docs.html">Документация</a>
+                </div>
+                <div class="footer-links footer-contacts">
+                    <h4>Контакты</h4>
+                    <div class="contacts-container">
+                        <a href="https://vk.com/FIT_GY" target="_blank" class="contact-link">
+                            <i class="contact-icon fab fa-vk"></i>
+                            <span>ВКонтакте</span>
+                        </a>
+                        <a href="https://t.me/FIT_GY" target="_blank" class="contact-link">
+                            <i class="contact-icon fab fa-telegram"></i>
+                            <span>Telegram</span>
+                        </a>
+                        <a href="mailto:fitngy@gmail.com?subject=Вопрос&body=Здравствуйте!" class="contact-link">
+                            <span>Написать письмо</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 FitGy. Все права защищены.</p>
+            </div>
+        </div>
+    </footer>
+    
+    <script type="module" src="../../js/auth-state.js"></script>
+    <script type="module" src="../../js/theory.js"></script>
+    <!-- Добавьте этот код перед закрывающим тегом </body> в training.html -->
+<div id="confirm-modal" class="confirm-modal">
+    <div class="modal-content">
+        <div class="modal-icon">
+            <i class="fas fa-exclamation-triangle"></i>
+        </div>
+        <h3 class="modal-title">Сбросить прогресс?</h3>
+        <p class="modal-message">Вы уверены, что хотите сбросить весь прогресс? Все изученные темы будут отмечены как не пройденные.</p>
+        <div class="modal-buttons">
+            <button id="modal-cancel" class="modal-btn cancel-btn">Отмена</button>
+            <button id="modal-confirm" class="modal-btn confirm-btn">Сбросить</button>
+        </div>
+    </div>
+</div>
+</body>
+</html>

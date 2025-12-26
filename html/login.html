@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <title>FitGy Авторизация</title>
+  <link rel="stylesheet" href="../css/login.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body>
+  <div class="auth-container">
+    <h2>Вход в FitGy</h2>
+    
+    <div class="input-group">
+      <input type="email" id="email" placeholder="Email">
+      <input type="password" id="password" placeholder="Пароль">
+      <a href="#" id="forgot-password" class="forgot-password">Забыли пароль?</a>
+    </div>
+    
+    <div class="button-row">
+      <button id="email-signup">Регистрация</button>
+      <button id="email-login-btn" class="login-btn">Войти</button>
+    </div>
+    
+    <div class="divider">
+      <span>или</span>
+    </div>
+    
+    <button id="google-login-btn" class="social-btn google">
+      <i class="fa-brands fa-google"></i> Войти через Google
+    </button>
+    
+    <button id="yandex-login-btn" class="social-btn yandex">
+      <i class="fa-brands fa-yandex"></i> Войти через Яндекс
+    </button>
+    
+    <div class="terms">
+      Нажимая "Регистрация" или "Войти", вы принимаете 
+      <a href="docs.html?section=offer" class="terms-link">правила Оферты</a> и 
+      <a href="docs.html#privacy-section" class="terms-link">политику конфиденциальности</a>
+    </div>
+  </div>
+
+  <!-- Модальное окно восстановления пароля -->
+  <div id="password-reset-modal" class="modal" style="display: none;">
+    <div class="modal-content">
+      <h3>Восстановление пароля</h3>
+      <p>Введите ваш email для получения ссылки восстановления:</p>
+      <input type="email" id="reset-email" placeholder="Ваш email">
+      <div class="modal-buttons">
+        <button id="cancel-reset">Отмена</button>
+        <button id="send-reset">Отправить</button>
+      </div>
+    </div>
+  </div>
+
+  <script type="module" src="../js/auth.js"></script>
+</body>
+</html>

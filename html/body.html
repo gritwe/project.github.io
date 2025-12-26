@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Анатомия мышц - 3D модель</title>
+
+<link rel="stylesheet" href="../css/body.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
+
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+<script type="module" src="../js/auth-state.js"></script>
+</head>
+
+<body>
+
+<header class="header">
+    <div class="container">
+        <nav class="nav">
+            <ul class="nav-list">
+                <li class="nav-logo">
+                    <a href="../index.html">
+                        <img src="../img/logo/logo.png" alt="Логотип FitGy">
+                    </a>
+                </li>
+
+                <ul class="nav-center">
+                    <li><a class="active" href="body.html">3D-Модель</a></li>
+                    <li><a href="training.html">Тренировки</a></li>
+                    <li><a href="food.html">Питание</a></li>
+                    <li><a href="equip.html">Экипировка</a></li>
+                    <li><a href="place.html">Места тренировок</a></li>
+                </ul>
+
+                <li class="nav-auth">
+                    <a href="login.html" id="auth-icon" class="auth-icon-hidden">
+                        <img src="../img/logo/auth.png" alt="Авторизация">
+                    </a>
+                    <a href="profile.html" id="profile-icon" class="auth-icon-hidden">
+                        <img src="../img/logo/profile.png" alt="Профиль">
+                    </a>
+                </li>
+            </ul>
+        </nav>
+    </div>
+</header>
+
+<div class="main-content">
+
+    <!-- САЙДБАР -->
+    <aside id="sidebar">
+        <b>Фильтр мышц</b>
+
+        <div id="muscle-filter">
+            <button data-group="all" class="active">Все мышцы</button>
+            <button data-group="abs">Нижние конечности</button>
+            <button data-group="upper">Верхние конечности</button>
+            <button data-group="head">Голова и шея</button>
+            <button data-group="lower">Спина</button>
+            <button data-group="back">Грудь и живот</button>
+        </div>
+
+        <b>Список мышц</b>
+        <div id="muscle-list"></div>
+    </aside>
+
+    <!-- МОДЕЛЬ -->
+    <section class="model-wrapper">
+
+        <div id="container">
+            <div id="confirm-screen">
+                <button id="confirm-close">×</button>
+                ⚠ Данная модель может быть неточной копией анатомии человека.
+                <button id="confirm-btn">Загрузить модель</button>
+            </div>
+
+            <model-viewer
+                id="viewer"
+                src="../scene.glb"
+                camera-controls
+                exposure="1"
+                shadow-intensity="1"
+                interaction-prompt="none">  <!-- ← Перенесите сюда -->
+            </model-viewer>
+        </div>
+
+        <!-- ПРАВАЯ КОЛОНКА -->
+        <aside id="right-panel">
+
+            <div id="controls-hint">
+                <b>Управление моделью:</b><br><br>
+                <i class="fa-solid fa-arrows-rotate"></i>  Вращение — ЛКМ<br>
+                <i class="fa-solid fa-magnifying-glass"></i>  Приближение — колесо<br>
+                <i class="fa-solid fa-hand"></i>  Перемещение — ПКМ
+            </div>
+
+            <div id="muscle-info-panel">
+                <div id="muscle-title"></div>
+                <div id="muscle-en"></div>
+                <div id="muscle-desc"></div>
+                <div id="muscle-exercises-link" style="margin-top: 15px; padding-top: 15px; border-top: 1px solid #333;">
+                    <a id="exercises-link-btn" href="#" 
+                    style="display: inline-block; background: #005fff; color: white; 
+                            padding: 8px 16px; border-radius: 5px; text-decoration: none; 
+                            font-weight: bold; transition: background 0.3s;">
+                        <i class="fas fa-dumbbell"></i> Упражнения для этой мышцы
+                    </a>
+                    <p style="margin-top: 10px; font-size: 12px; color: #aaa;">
+                        Перейти к подборке упражнений
+                    </p>
+                </div>
+            </div>
+
+        </aside>
+    </section>
+</div>
+<footer class="footer">
+        <div class="container-footer">
+            <div class="footer-content">
+                <div class="footer-links">
+                    <h4>Разделы</h4>
+                    <a href="body.html">3D-Модель</a>
+                    <a href="training.html">Тренировки</a>
+                    <a href="place.html">Места посещения</a>
+                </div>
+                <div class="footer-links">
+                    <h4>Ресурсы</h4>
+                    <a href="food.html">Питание</a>
+                    <a href="equip.html">Экипировка</a>
+                    <a href="docs.html">Документация</a>
+                </div>
+                <div class="footer-links footer-contacts">
+                <h4>Контакты</h4>
+                <div class="contacts-container">
+                    <a href="https://vk.com/FIT_GY" target="_blank" class="contact-link">
+                        <i class="contact-icon fab fa-vk"></i>
+                        <span>ВКонтакте</span>
+                    </a>
+                    <a href="https://t.me/FIT_GY" target="_blank" class="contact-link">
+                        <i class="contact-icon fab fa-telegram"></i>
+                        <span>Telegram</span>
+                    </a>
+                    <a href="mailto:fitngy@gmail.com?subject=Вопрос&body=Здравствуйте!" class="contact-link">
+                        <span>Написать писмьо</span>
+                    </a>
+                </div>
+            </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 FitGy. Все права защищены.</p>
+            </div>
+        </div>
+    </footer>
+<script type="module" src="../js/body.js"></script>
+</body>
+</html>

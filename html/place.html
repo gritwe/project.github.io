@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Места для тренировок | FitGy</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/places.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <!-- Замените YOUR_API_KEY на ваш реальный ключ -->
+    <script src="https://api-maps.yandex.ru/2.1/?apikey=37c69753-7a1f-433e-8c6c-a09ed4ec18c8&lang=ru_RU&load=package.full" type="text/javascript"></script>
+</head>
+<body>
+    <header class="header">
+    <div class="container">
+        <nav class="nav">
+            <ul class="nav-list">
+                <li class="nav-logo">
+                    <a href="../index.html">
+                        <img src="../img/logo/logo.png" alt="Логотип FitGy">
+                    </a>
+                </li>
+
+                <ul class="nav-center">
+                    <li><a href="body.html">3D-Модель</a></li>
+                    <li><a href="training.html">Тренировки</a></li>
+                    <li><a href="food.html">Питание</a></li>
+                    <li><a href="equip.html">Экипировка</a></li>
+                    <li><a class="active" href="place.html">Места тренировок</a></li>
+                </ul>
+
+                <li class="nav-auth">
+                    <a href="login.html" id="auth-icon" class="auth-icon-hidden">
+                        <img src="../img/logo/auth.png" alt="Авторизация">
+                    </a>
+                    <a href="profile.html" id="profile-icon" class="auth-icon-hidden">
+                        <img src="../img/logo/profile.png" alt="Профиль">
+                    </a>
+                </li>
+            </ul>
+        </nav>
+    </div>
+    </header>
+
+    <main class="locations-main">
+        <div class="container">
+            <div class="page-header">
+                <h1 class="page-title"><i class="fas fa-map-marker-alt"></i> Карта спортивных мест</h1>
+            </div>
+
+            <div class="locations-content">
+                <!-- Боковая панель только с кнопками поиска -->
+                <aside class="locations-sidebar">
+                    <div class="sidebar-section">
+                        <h3><i class="fas fa-search"></i> Быстрый поиск</h3>
+                        <div class="quick-search-buttons">
+                            <button class="quick-btn" data-query="фитнес клуб">
+                                <i class="fas fa-dumbbell"></i> Фитнес-клубы
+                            </button>
+                            <button class="quick-btn" data-query="бассейн">
+                                <i class="fas fa-swimming-pool"></i> Бассейны
+                            </button>
+                            <button class="quick-btn" data-query="йога студия">
+                                <i class="fas fa-spa"></i> Йога-студии
+                            </button>
+                            <button class="quick-btn" data-query="тренажерный зал">
+                                <i class="fas fa-weight"></i> Тренажерные залы
+                            </button>
+                            <button class="quick-btn" data-query="стадион">
+                                <i class="fas fa-running"></i> Стадионы
+                            </button>
+                            <button class="quick-btn" data-query="спортивная площадка">
+                                <i class="fas fa-tree"></i> Спортплощадки
+                            </button>
+                            <button class="quick-btn" data-query="бокс зал">
+                                <i class="fas fa-fist-raised"></i> Бокс-залы
+                            </button>
+                            <button class="quick-btn" data-query="баскетбол площадка">
+                                <i class="fas fa-basketball-ball"></i> Баскетбольные площадки
+                            </button>
+                        </div>
+                    </div>
+
+                    
+                </aside>
+
+                <!-- Основная карта -->
+                <div class="locations-map-section">
+                    <div class="map-container">
+                        <!-- Яндекс Карта -->
+                        <div id="map"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+<footer class="footer">
+        <div class="container-footer">
+            <div class="footer-content">
+                <div class="footer-links">
+                    <h4>Разделы</h4>
+                    <a href="body.html">3D-Модель</a>
+                    <a href="training.html">Тренировки</a>
+                    <a href="place.html">Места посещения</a>
+                </div>
+                <div class="footer-links">
+                    <h4>Ресурсы</h4>
+                    <a href="food.html">Питание</a>
+                    <a href="equip.html">Экипировка</a>
+                    <a href="docs.html">Документация</a>
+                </div>
+                <div class="footer-links footer-contacts">
+                <h4>Контакты</h4>
+                <div class="contacts-container">
+                    <a href="https://vk.com/FIT_GY" target="_blank" class="contact-link">
+                        <i class="contact-icon fab fa-vk"></i>
+                        <span>ВКонтакте</span>
+                    </a>
+                    <a href="https://t.me/FIT_GY" target="_blank" class="contact-link">
+                        <i class="contact-icon fab fa-telegram"></i>
+                        <span>Telegram</span>
+                    </a>
+                    <a href="mailto:fitngy@gmail.com?subject=Вопрос&body=Здравствуйте!" class="contact-link">
+                        <span>Написать писмьо</span>
+                    </a>
+                </div>
+            </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 FitGy. Все права защищены.</p>
+            </div>
+        </div>
+    </footer>
+    <script type="module" src="../js/auth-state.js"></script>
+    <script src="../js/places.js"></script>
+</body>
+</html>

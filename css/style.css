@@ -1,0 +1,678 @@
+/* Общие стили */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #000;
+    color: #fff;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.container {
+    width: 1280px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Header */
+.header {
+    background-color: #000;
+    padding: 20px 0;
+    position: fixed; /* Фиксируем header */
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000; /* Чтобы header был поверх других элементов */
+}
+
+/* Убираем внешние отступы у container в header */
+.header .container {
+    padding: 0; /* Убираем горизонтальные отступы */
+    width: 1280px;
+    margin: 0 auto;
+}
+
+.nav-list {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    list-style: none;
+    margin: 0;
+    padding: 0 20px; /* Добавляем отступы внутрь списка */
+    width: 100%; /* Занимает всю ширину контейнера */
+}
+
+/* Остальные стили остаются без изменений */
+.nav-logo {
+    flex-shrink: 0;
+}
+
+.nav-logo img {
+    height: 40px;
+    width: auto;
+}
+
+/* Центр навигации */
+.nav-center {
+    display: flex;
+    gap: 50px;
+    margin: 0 auto; /* Центрируем */
+}
+
+.nav-center li {
+    list-style: none;
+}
+
+.nav-center li a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 16px;
+    text-transform: uppercase;
+    transition: opacity 0.3s ease;
+}
+
+.nav-center li a:hover {
+    opacity: 0.7;
+}
+
+.nav-center a.active {
+    color: #4285f4;
+    position: relative;
+}
+
+.nav-center a.active::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: #4285f4;
+}
+
+
+
+.nav-auth img {
+    height: 40px;
+    width: auto;
+}
+
+/* Иконки авторизации / профиля */
+/* Новые классы для управления видимостью */
+.auth-icon-hidden {
+  display: none !important;
+}
+
+/* Показанный элемент с плавным появлением */
+.auth-icon-visible {
+  display: block !important;
+  animation: fadeIn 0.3s ease;
+}
+
+/* Контейнер для фиксированного размера */
+.nav-auth {
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+/* Hero */
+.hero {
+    padding: 60px 0;
+    margin-top: 40px;
+}
+
+.hero .container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.hero-text {
+    max-width: 600px;
+    margin: 50px;
+}
+
+.hero-text h1 {
+    font-size: 42px;
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.hero-text p {
+    font-size: 24px;
+    text-align: left;
+}
+
+.hero-image {
+    max-width: 500px;
+    width: 100%;
+}
+
+/* Activities */
+.activities {
+    text-align: center;
+    padding: 60px 0;
+}
+
+.activities h2 {
+    font-size: 36px;
+    margin-bottom: 50px;
+}
+.activities a {
+    text-decoration: none; /* убираем подчеркивание */
+    color: inherit; /* чтобы текст унаследовал цвет из карточки */
+}
+
+.activities-cards {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+}
+.activity-card {
+    background-color: #18191E;
+    border-radius: 30px;
+    width: 180px;
+    height: 180px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: transform 0.3s;
+}
+
+.activity-card:hover {
+    transform: scale(1.05);
+}
+
+.activity-card img {
+    width: 70px;
+    height: 70px;
+}
+
+.activity-card p {
+    margin-top: 15px;
+    font-size: 20px;
+    text-align: center;
+    color: #fff; /* добавим цвет текста, чтобы был виден на темном фоне */
+}
+
+
+.activity-card:hover {
+    transform: translateY(-8px);
+}
+
+/* Why FitGy / Carousel */
+.why-fitgy {
+    padding: 40px 0;
+    margin-bottom: 60px;
+}
+
+.why-fitgy h2 {
+    text-align: center;
+    font-size: 36px;
+    margin-bottom: 50px;
+}
+
+.carousel {
+    position: relative;
+    max-width: 800px;
+    margin: 0 auto;
+    height: 200px;
+}
+
+.carousel-slides {
+    position: relative;
+    overflow: hidden;
+}
+
+.carousel-slide {
+    display: none;
+    background-color: #18191E;
+    padding: 55px;
+    border-radius: 15px;
+    height: 200px;
+}
+
+.carousel-slide.active {
+    display: block;
+}
+
+.carousel-slide h3 {
+    font-size: 26px;
+    text-align: center;
+}
+
+.carousel-slide p {
+    font-size: 18px;
+    margin-top: 15px;
+    text-align: center;
+}
+
+.carousel-arrow {
+    position: absolute;
+    top: 50%;
+    width: 20px;
+    height: 20px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    z-index: 10;
+}
+
+.carousel-arrow.left {
+    left: 10px;
+}
+
+.carousel-arrow.right {
+    right: 10px;
+}
+
+.carousel-arrow::before {
+    content: '';
+    display: block;
+    width: 0;
+    height: 0;
+    border-style: solid;
+}
+
+.carousel-arrow.left::before {
+    border-width: 10px 15px 10px 0;
+    border-color: transparent #fff transparent transparent;
+}
+
+.carousel-arrow.right::before {
+    border-width: 10px 0 10px 15px;
+    border-color: transparent transparent transparent #fff;
+}
+
+/* TRAININGS */
+.trainings {
+    padding: 60px 20px;
+}
+.trainings h2 {
+    font-size: 36px;
+    text-align: center;
+    margin-bottom: 100px;
+}
+
+.trainings-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+.trainings-grid a {
+    text-decoration: none; /* убираем подчеркивание */
+    color: inherit; /* чтобы текст унаследовал цвет из карточки */
+}
+.training-card {
+    display: flex;
+    flex-direction: row;
+    gap: 30px;
+    align-items: center;
+    border-radius: 15px;
+    overflow: hidden;
+}
+
+.training-card.reverse {
+    flex-direction: row-reverse;
+}
+
+.training-image img {
+    width: 400px;
+    height: 250px;
+    object-fit: cover;
+    border-radius: 15px;
+}
+
+.training-content h3 {
+    font-size: 26px;
+    margin-bottom: 10px;
+}
+
+.training-content p {
+    font-size: 18px;
+    line-height: 1.5;
+}
+
+/* NUTRITION */
+.nutrition {
+    padding: 60px 20px;
+}
+
+.nutrition h2 {
+    text-align: center;
+    font-size: 36px;
+    margin-bottom: 50px;
+}
+
+.nutrition .subtitle {
+    font-size: 24px;
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.nutrition-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+.nutrition-card {
+    background-color: #18191E;
+    border-radius: 15px;
+    padding: 20px;
+    transition: transform 0.3s;
+    width: 400px;
+    height: 200px;
+    line-height: 1.5;
+}
+.nutrition-cards a {
+    text-decoration: none; /* убираем подчеркивание */
+    color: inherit; /* чтобы текст унаследовал цвет из карточки */
+}
+.nutrition-card p {
+    font-size: 20px;
+}
+.nutrition-card:hover {
+    transform: translateY(-5px);
+}
+
+.nutrition-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nutrition-header h3 {
+    font-size: 22px;
+}
+
+.nutrition-header i {
+    color: #005fff;
+}
+
+/* EQUIPMENT */
+.equipment {
+    padding: 60px 20px;
+    background-color: #000;
+    text-align: center;
+}
+
+.equipment h2 {
+    font-size: 36px;
+    margin-bottom: 20px;
+}
+
+.equipment .subtitle {
+    font-size: 18px;
+    margin-bottom: 50px;
+}
+
+.equipment-cards {
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+}
+.equipment-cards a {
+    text-decoration: none; /* убираем подчеркивание */
+    color: inherit; /* чтобы текст унаследовал цвет из карточки */
+}
+.equipment-card {
+    display: flex;
+    gap: 30px;
+    align-items: center;
+}
+
+.equipment-card.reverse {
+    flex-direction: row-reverse;
+}
+
+.equipment-image img {
+    width: 400px;
+    height: 250px;
+    object-fit: cover;
+    border-radius: 15px;
+}
+
+.equipment-content h3 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.equipment-content p {
+    font-size: 18px;
+    text-align: left;
+}
+
+/* TRAINING LOCATIONS */
+.training-locations {
+    padding: 60px 20px;
+}
+
+.training-locations h2 {
+    text-align: center;
+    font-size: 28px;
+    margin-bottom: 20px;
+}
+
+.training-locations .description {
+    font-size: 20px;
+    text-align: center;
+    margin-bottom: 40px;
+    color: #ccc;
+}
+
+.location-columns {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+}
+
+.location-column {
+    flex: 1;
+    min-width: 250px;
+}
+
+.location-card {
+    position: relative;
+    margin-bottom: 20px;
+}
+
+.location-card h3 {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.location-card .na {
+    position: absolute;
+    top: 0;
+    right: 0;
+    color: #fff;
+    font-weight: bold;
+}
+
+.location-card p {
+    font-size: 14px;
+    color: #ccc;
+    margin-top: 5px;
+}
+
+.card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.card-header h3 {
+    margin: 0;
+    font-size: 1.2em;
+}
+
+.material-icons.location-icon {
+    color: #ea4335;
+    font-size: 24px;
+}
+
+.location-card {
+    padding: 20px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+}
+
+.location-card p {
+    margin: 0;
+    color: #666;
+    line-height: 1.5;
+}
+.location-link {
+    text-decoration: none;
+    color: inherit;
+    display: block;
+    transition: transform 0.2s ease;
+}
+
+.location-link:hover {
+    transform: translateY(-5px);
+}
+
+.location-link:hover .location-card {
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+}
+/* Добавьте в places.css или style.css */
+.location-link {
+    text-decoration: none;
+    color: inherit;
+    display: block;
+    transition: all 0.3s ease;
+}
+
+.location-link:hover {
+    transform: translateY(-5px);
+}
+
+.location-link:hover .location-card {
+    background: linear-gradient(135deg, #005FFF 0%, #764ba2 100%);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+}
+
+.location-link:hover .location-card h3 {
+    color: white;
+}
+
+.location-link:hover .location-card p {
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.location-link:hover .material-icons.location-icon {
+    color: white;
+}
+.footer {
+    background-color: #000;
+    padding: 50px 0 0; /* убираем нижний паддинг, так как footer-bottom будет отдельно */
+    border-top: 1px solid #333;
+    width: 100%;
+}
+
+.footer-content {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    max-width: 600px;
+    margin: 0 auto 40px auto;
+    gap: 50px;
+    text-align: center;
+}
+
+/* Убираем все отступы и растягиваем на всю ширину */
+.footer-bottom {
+    text-align: center;
+    padding: 30px 0;
+    border-top: 1px solid #333;
+    color: #666;
+    font-size: 0.9rem;
+    width: 100%;
+    margin: 0; /* убираем все внешние отступы */
+}
+
+.footer-logo img {
+    height: 50px;
+    margin-bottom: 20px;
+}
+
+.footer-logo p {
+    color: #aaa;
+    font-size: 0.95rem;
+    line-height: 1.5;
+    word-wrap: break-word;
+}
+
+.footer-links h4 {
+    color: #fff;
+    font-size: 1.1rem;
+    margin-bottom: 20px;
+}
+
+.footer-links a {
+    display: block;
+    color: #aaa;
+    text-decoration: none;
+    margin-bottom: 12px;
+    font-size: 0.95rem;
+    transition: color 0.3s ease;
+    word-wrap: break-word;
+}
+
+.footer-links a:hover {
+    color: #005FFF;
+}
+
+.footer-bottom {
+    width: 100%;
+    text-align: center;
+    padding: 30px 0;
+    border-top: 1px solid #333;
+    color: #666;
+    background-color: #000;
+}
+
+/* Черный скроллбар для Webkit браузеров */
+::-webkit-scrollbar {
+    width: 12px;
+    height: 12px;
+}
+
+::-webkit-scrollbar-track {
+    background: #000;
+    border-radius: 6px;
+}
+
+::-webkit-scollbar-track:hover {
+    background: #111;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #333;
+    border-radius: 6px;
+    border: 2px solid #000;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #444;
+}
+
+::-webkit-scrollbar-thumb:active {
+    background: #555;
+}
+
+::-webkit-scrollbar-corner {
+    background: #000;
+}

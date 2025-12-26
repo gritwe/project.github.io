@@ -1,0 +1,1733 @@
+/* nutrition-plan-new.css */
+/* Общие стили */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #000;
+    color: #fff;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.container {
+    width: 1280px;
+    margin: 0 auto;
+    padding: 0 20px;
+
+}
+
+/* Header */
+.header {
+    background-color: #000;
+    padding: 20px 0;
+    position: fixed; /* Фиксируем header */
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000; /* Чтобы header был поверх других элементов */
+}
+
+/* Убираем внешние отступы у container в header */
+.header .container {
+    padding: 0; /* Убираем горизонтальные отступы */
+    width: 1280px;
+    margin: 0 auto;
+}
+
+.nav-list {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    list-style: none;
+    margin: 0;
+    padding: 0 20px; /* Добавляем отступы внутрь списка */
+    width: 100%; /* Занимает всю ширину контейнера */
+}
+
+/* Остальные стили остаются без изменений */
+.nav-logo {
+    flex-shrink: 0;
+}
+
+.nav-logo img {
+    height: 40px;
+    width: auto;
+}
+
+/* Центр навигации */
+.nav-center {
+    display: flex;
+    gap: 50px;
+    margin: 0 auto; /* Центрируем */
+}
+
+.nav-center li {
+    list-style: none;
+}
+
+.nav-center li a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 16px;
+    text-transform: uppercase;
+    transition: opacity 0.3s ease;
+}
+
+.nav-center li a:hover {
+    opacity: 0.7;
+}
+
+.nav-center a.active {
+    color: #4285f4;
+    position: relative;
+}
+
+.nav-center a.active::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: #4285f4;
+}
+
+
+
+.nav-auth img {
+    height: 40px;
+    width: auto;
+}
+
+/* Иконки авторизации / профиля */
+/* Новые классы для управления видимостью */
+.auth-icon-hidden {
+  display: none !important;
+}
+
+/* Показанный элемент с плавным появлением */
+.auth-icon-visible {
+  display: block !important;
+  animation: fadeIn 0.3s ease;
+}
+
+/* Контейнер для фиксированного размера */
+.nav-auth {
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+:root {
+    --primary-color: #005fff;
+    --primary-dark: #002f82;
+    --success-color: #10b981;
+    --warning-color: #f59e0b;
+    --danger-color: #ef4444;
+    --info-color: #3b82f6;
+    --dark-bg: #18191E;
+    --darker-bg: #0f1117;
+    --light-bg: #2a2b32;
+    --text-light: #ffffff;
+    --text-muted: #9ca3af;
+    --border-color: #374151;
+}
+
+.nutrition-plan-new {
+    padding: 0px 0;
+    min-height: 100vh;
+}
+
+.plan-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 40px;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.page-title {
+    font-size: 32px;
+    color: var(--text-light);
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.page-title i {
+    color: var(--primary-color);
+}
+
+.header-actions {
+    display: flex;
+    gap: 15px;
+}
+
+.btn {
+    padding: 12px 24px;
+    border-radius: 10px;
+    border: none;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+    font-size: 14px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+}
+
+.btn-primary {
+    background: linear-gradient(135deg, var(--primary-color), var(--primary-dark));
+    color: white;
+}
+
+.btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 20px rgba(102, 126, 234, 0.3);
+}
+
+.btn-secondary {
+    background: var(--light-bg);
+    color: var(--text-muted);
+    border: 1px solid var(--border-color);
+    text-decoration: none;
+}
+
+.btn-secondary:hover {
+    background: var(--border-color);
+    color: white;
+}
+
+.btn-success {
+    background: var(--success-color);
+    color: white;
+}
+
+.btn-success:hover {
+    background: #059669;
+}
+
+.btn-outline {
+    background: transparent;
+    color: var(--text-muted);
+    border: 1px solid var(--border-color);
+}
+
+.btn-outline:hover {
+    background: var(--light-bg);
+    color: white;
+}
+
+.btn-danger {
+    background: var(--danger-color);
+    color: white;
+}
+
+.btn-danger:hover {
+    background: #dc2626;
+}
+
+.btn-info {
+    background: var(--info-color);
+    color: white;
+}
+
+.btn-info:hover {
+    background: #2563eb;
+}
+
+.btn-lg {
+    padding: 16px 32px;
+    font-size: 16px;
+}
+
+.btn-sm {
+    padding: 8px 16px;
+    font-size: 13px;
+}
+
+.setup-section,
+.plan-section {
+    background: var(--dark-bg);
+    border-radius: 20px;
+    padding: 30px;
+    margin-bottom: 30px;
+    display: none;
+}
+
+.setup-section.active,
+.plan-section.active {
+    display: block;
+    animation: fadeIn 0.5s ease;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.section-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.section-header h2 {
+    color: var(--text-light);
+    font-size: 24px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.step-number {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 32px;
+    height: 32px;
+    background: linear-gradient(135deg, var(--primary-color), var(--primary-dark));
+    border-radius: 50%;
+    font-size: 16px;
+    font-weight: 700;
+    color: white;
+}
+
+.setup-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    margin-bottom: 40px;
+}
+
+.setup-card {
+    background: var(--light-bg);
+    border-radius: 15px;
+    padding: 25px;
+}
+
+.setup-card h3 {
+    color: var(--text-light);
+    font-size: 18px;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.setup-card h3 i {
+    color: var(--primary-color);
+}
+
+.bju-targets {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    margin-bottom: 20px;
+}
+
+.bju-target label {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: var(--text-muted);
+    font-size: 14px;
+    margin-bottom: 8px;
+}
+
+.bju-target label i {
+    color: var(--primary-color);
+}
+
+.input-with-help {
+    position: relative;
+}
+
+.input-with-help input {
+    width: 100%;
+    padding: 12px 40px 12px 15px;
+    background: var(--darker-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    color: var(--text-light);
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.input-with-help input:focus {
+    outline: none;
+    border-color: var(--primary-color);
+}
+
+.help-btn {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 24px;
+    height: 24px;
+    background: var(--border-color);
+    border: none;
+    border-radius: 50%;
+    color: var(--text-muted);
+    cursor: help;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.bju-actions {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%; /* опционально, если нужно растянуть на всю ширину */
+    text-align: center; /* дополнительное выравнивание текста */
+}
+.settings-group {
+    margin-bottom: 25px;
+}
+
+.settings-group:last-child {
+    margin-bottom: 0;
+}
+
+.settings-group h4 {
+    color: var(--text-muted);
+    font-size: 14px;
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.meal-count-selector {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.meal-count-option {
+    display: flex;
+    align-items: center;
+    padding: 12px;
+    background: var(--darker-bg);
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.meal-count-option:hover {
+    background: var(--border-color);
+}
+
+.meal-count-option input[type="radio"] {
+    margin-right: 12px;
+    accent-color: var(--primary-color);
+}
+
+.meal-count-label {
+    flex: 1;
+    color: var(--text-light);
+    font-weight: 500;
+}
+
+.meal-count-time {
+    color: var(--text-muted);
+    font-size: 12px;
+}
+
+.duration-selector {
+    display: flex;
+    gap: 5px;
+    flex-wrap: wrap;
+}
+
+.duration-option {
+    flex: 1;
+    min-width: 80px;
+}
+
+.duration-option input[type="radio"] {
+    display: none;
+}
+
+.duration-label {
+    display: block;
+    padding: 10px;
+    background: var(--darker-bg);
+    border-radius: 8px;
+    color: var(--text-muted);
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+.duration-option:nth-child(2) .duration-label {
+    white-space: nowrap;
+}
+
+.duration-option input[type="radio"]:checked + .duration-label {
+    background: linear-gradient(135deg, var(--primary-color), var(--primary-dark));
+    color: white;
+}
+
+.restrictions-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+}
+
+.restriction-checkbox {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: var(--text-light);
+    font-size: 14px;
+    cursor: pointer;
+}
+
+.restriction-checkbox input[type="checkbox"] {
+    accent-color: var(--primary-color);
+}
+
+.favorites-input input {
+    width: 100%;
+    padding: 12px;
+    background: var(--darker-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    color: var(--text-light);
+    font-size: 14px;
+}
+
+.favorites-input input:focus {
+    outline: none;
+    border-color: var(--primary-color);
+}
+
+.diet-select {
+    width: 100%;
+    padding: 12px;
+    background: var(--darker-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    color: var(--text-light);
+    font-size: 14px;
+    cursor: pointer;
+}
+
+.diet-select:focus {
+    outline: none;
+    border-color: var(--primary-color);
+}
+
+.section-footer {
+    display: flex;
+    justify-content: center;
+    margin-top: 30px;
+}
+.footer {
+    background-color: #000;
+    padding: 50px 0 30px;
+    border-top: 1px solid #333;
+    width: 100%;
+}
+
+
+.footer-content {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    max-width: 600px;
+    margin: 0 auto 40px auto;
+    gap: 50px;
+    text-align: center;
+}
+
+.footer-logo img {
+    height: 50px;
+    margin-bottom: 20px;
+}
+
+.footer-logo p {
+    color: #aaa;
+    font-size: 0.95rem;
+    line-height: 1.5;
+    word-wrap: break-word;
+}
+
+.footer-links h4 {
+    color: #fff;
+    font-size: 1.1rem;
+    margin-bottom: 20px;
+}
+
+.footer-links a {
+    display: block;
+    color: #aaa;
+    text-decoration: none;
+    margin-bottom: 12px;
+    font-size: 0.95rem;
+    transition: color 0.3s ease;
+    word-wrap: break-word;
+}
+
+.footer-links a:hover {
+    color: #005FFF;
+}
+
+.footer-bottom {
+    text-align: center;
+    padding-top: 30px;
+    border-top: 1px solid #333;
+    color: #666;
+    font-size: 0.9rem;
+    width: 100%;
+}
+/* Стили для плана */
+.plan-controls {
+    background: var(--light-bg);
+    border-radius: 15px;
+    padding: 20px;
+    margin-bottom: 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.week-navigation {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.nav-btn {
+    width: 36px;
+    height: 36px;
+    background: var(--darker-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    color: var(--text-light);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.nav-btn:hover {
+    background: var(--border-color);
+}
+
+.week-info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-width: 120px;
+}
+
+.week-info span:first-child {
+    color: var(--text-light);
+    font-weight: 600;
+}
+
+.week-info span:last-child {
+    color: var(--text-muted);
+    font-size: 12px;
+}
+
+.day-navigation {
+    display: flex;
+    gap: 10px;
+}
+
+.day-btn {
+    width: 36px;
+    height: 36px;
+    background: var(--darker-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    color: var(--text-muted);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.day-btn:hover {
+    background: var(--border-color);
+    color: var(--text-light);
+}
+
+.day-btn.active {
+    background: linear-gradient(135deg, var(--primary-color), var(--primary-dark));
+    color: white;
+    border: none;
+}
+
+.plan-summary {
+    display: flex;
+    gap: 20px;
+}
+
+.summary-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-width: 100px;
+    padding: 15px;
+    background: var(--darker-bg);
+    border-radius: 8px;
+}
+
+.summary-label {
+    color: var(--text-muted);
+    font-size: 12px;
+    margin-bottom: 5px;
+}
+
+.summary-value {
+    color: var(--text-light);
+    font-size: 18px;
+    font-weight: 700;
+}
+
+.summary-value.positive {
+    color: var(--success-color);
+}
+
+.summary-value.negative {
+    color: var(--danger-color);
+}
+
+.summary-value.neutral {
+    color: var(--warning-color);
+}
+
+.day-plan {
+    background: var(--light-bg);
+    border-radius: 15px;
+    overflow: hidden;
+}
+
+.day-header {
+    padding: 20px;
+    background: rgba(102, 126, 234, 0.1);
+    border-bottom: 1px solid var(--border-color);
+}
+
+.day-header h3 {
+    color: var(--text-light);
+    font-size: 20px;
+    margin-bottom: 5px;
+}
+
+.day-header span {
+    color: var(--text-muted);
+    font-size: 14px;
+}
+
+/* ИСПРАВЛЕННЫЙ КОД: Выравнивание плашек */
+.meals-grid {
+    padding: 20px;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+    gap: 20px;
+    align-items: start; /* Выравнивание по верху */
+}
+
+.meal-card {
+    background: var(--darker-bg);
+    border-radius: 12px;
+    overflow: hidden;
+    border: 1px solid var(--border-color);
+    display: flex;
+    flex-direction: column;
+    height: 100%; /* Растягиваем на всю высоту */
+    min-height: 450px; /* Минимальная высота для единообразия */
+}
+
+.meal-header {
+    padding: 15px;
+    background: rgba(102, 126, 234, 0.2);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid var(--border-color);
+    flex-shrink: 0; /* Запрещаем сжатие */
+}
+
+.meal-header h4 {
+    color: var(--text-light);
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.meal-time {
+    color: var(--text-muted);
+    font-size: 12px;
+    font-weight: normal;
+    margin-left: 10px;
+}
+
+.meal-actions {
+    display: flex;
+    gap: 10px;
+}
+
+.meal-action-btn {
+    width: 28px;
+    height: 28px;
+    background: transparent;
+    border: 1px solid var(--border-color);
+    border-radius: 6px;
+    color: var(--text-muted);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.meal-action-btn:hover {
+    background: var(--border-color);
+    color: var(--text-light);
+}
+
+.meal-content {
+    padding: 15px;
+    flex-grow: 1; /* Занимает доступное пространство */
+    display: flex;
+    flex-direction: column;
+}
+
+.dishes-list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    flex-grow: 1; /* Растягиваем список блюд */
+    min-height: 120px; /* Минимальная высота для списка блюд */
+}
+
+.dish-card {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding: 12px;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.dish-card:hover {
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.dish-info {
+    flex: 1;
+}
+
+.dish-name {
+    color: var(--text-light);
+    font-size: 14px;
+    font-weight: 500;
+    margin-bottom: 4px;
+}
+
+.dish-category {
+    color: var(--text-muted);
+    font-size: 12px;
+}
+
+.dish-portion {
+    color: var(--text-light);
+    font-size: 12px;
+    font-weight: 600;
+    min-width: 60px;
+    text-align: center;
+}
+
+.dish-nutrition {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 2px;
+}
+
+.dish-calories {
+    color: var(--text-light);
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.dish-macros {
+    color: var(--text-muted);
+    font-size: 11px;
+}
+
+.empty-meal {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 30px;
+    color: var(--text-muted);
+    text-align: center;
+    flex-grow: 1; /* Растягиваем пустое состояние */
+}
+
+.empty-meal i {
+    font-size: 32px;
+    margin-bottom: 10px;
+    opacity: 0.5;
+}
+
+.meal-summary {
+    margin-top: 15px;
+    padding-top: 15px;
+    border-top: 1px solid var(--border-color);
+    flex-shrink: 0; /* Запрещаем сжатие */
+}
+
+.meal-totals {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.meal-total-label {
+    color: var(--text-muted);
+    font-size: 12px;
+}
+
+.meal-total-value {
+    color: var(--text-light);
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.meal-goal-progress {
+    margin-top: 8px;
+    font-size: 11px;
+    color: var(--text-muted);
+    display: flex;
+    justify-content: space-between;
+}
+
+.meal-goal-progress .progress-good {
+    color: var(--success-color);
+}
+
+.meal-goal-progress .progress-low {
+    color: var(--warning-color);
+}
+
+.meal-goal-progress .progress-bad {
+    color: var(--danger-color);
+}
+
+.day-summary {
+    padding: 20px;
+    border-top: 1px solid var(--border-color);
+}
+
+.bju-summary {
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+.bju-item {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 15px;
+}
+
+.bju-item:last-child {
+    margin-bottom: 0;
+}
+
+.bju-label {
+    color: var(--text-light);
+    font-size: 14px;
+    font-weight: 500;
+    min-width: 70px;
+}
+
+.bju-bar {
+    flex: 1;
+    height: 8px;
+    background: var(--border-color);
+    border-radius: 4px;
+    overflow: hidden;
+    position: relative;
+}
+
+.bju-progress {
+    height: 100%;
+    background: linear-gradient(135deg, var(--primary-color), var(--primary-dark));
+    transition: width 0.3s ease;
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+
+.bju-progress.over {
+    background: var(--danger-color);
+}
+
+.bju-progress.under {
+    background: var(--warning-color);
+}
+
+.bju-progress.perfect {
+    background: var(--success-color);
+}
+
+.bju-value {
+    color: var(--text-light);
+    font-size: 14px;
+    font-weight: 600;
+    min-width: 100px;
+    text-align: right;
+}
+
+.bju-value .good {
+    color: var(--success-color);
+}
+
+.bju-value .low {
+    color: var(--warning-color);
+}
+
+.bju-value .bad {
+    color: var(--danger-color);
+}
+
+.total-calories-display {
+    text-align: center;
+    margin-bottom: 20px;
+    padding: 15px;
+    background: var(--darker-bg);
+    border-radius: 10px;
+}
+
+.total-calories-display h4 {
+    color: var(--text-muted);
+    font-size: 14px;
+    margin-bottom: 8px;
+}
+
+.total-calories-display .value {
+    color: var(--text-light);
+    font-size: 28px;
+    font-weight: 700;
+}
+
+.total-calories-display .difference {
+    font-size: 14px;
+    margin-top: 5px;
+}
+
+.total-calories-display .difference.positive {
+    color: var(--success-color);
+}
+
+.total-calories-display .difference.negative {
+    color: var(--danger-color);
+}
+
+.total-calories-display .difference.neutral {
+    color: var(--warning-color);
+}
+
+/* Модальные окна */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.8);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    backdrop-filter: blur(5px);
+}
+
+.modal-overlay.active {
+    display: flex;
+    animation: fadeIn 0.3s ease;
+}
+
+.modal-content {
+    background: var(--dark-bg);
+    border-radius: 20px;
+    width: 90%;
+    max-width: 800px;
+    max-height: 90vh;
+    overflow-y: auto;
+    position: relative;
+    margin: 20px;
+}
+
+.modal-header {
+    padding: 20px;
+    border-bottom: 1px solid var(--border-color);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.modal-header h3 {
+    color: var(--text-light);
+    font-size: 20px;
+}
+
+.modal-close {
+    width: 32px;
+    height: 32px;
+    background: var(--light-bg);
+    border: none;
+    border-radius: 8px;
+    color: var(--text-muted);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.modal-close:hover {
+    background: var(--border-color);
+    color: var(--text-light);
+}
+
+.modal-body {
+    padding: 20px;
+}
+
+.recipe-search {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.search-input {
+    flex: 1;
+    padding: 12px 15px;
+    background: var(--light-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    color: var(--text-light);
+    font-size: 14px;
+}
+
+.search-input:focus {
+    outline: none;
+    border-color: var(--primary-color);
+}
+
+.search-btn {
+    width: 44px;
+    background: linear-gradient(135deg, var(--primary-color), var(--primary-dark));
+    border: none;
+    border-radius: 8px;
+    color: white;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.recipe-categories {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.category-btn {
+    padding: 8px 16px;
+    background: var(--light-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 20px;
+    color: var(--text-muted);
+    font-size: 13px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.category-btn:hover {
+    background: var(--border-color);
+    color: var(--text-light);
+}
+
+.category-btn.active {
+    background: linear-gradient(135deg, var(--primary-color), var(--primary-dark));
+    color: white;
+    border: none;
+}
+
+.recipes-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 15px;
+    max-height: 400px;
+    overflow-y: auto;
+    padding: 10px;
+}
+
+.recipe-item {
+    background: var(--light-bg);
+    border-radius: 10px;
+    padding: 15px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.recipe-item:hover {
+    background: var(--border-color);
+    transform: translateY(-2px);
+}
+
+.recipe-item h5 {
+    color: var(--text-light);
+    font-size: 14px;
+    margin-bottom: 8px;
+}
+
+.recipe-cat {
+    color: var(--text-muted);
+    font-size: 11px;
+    margin-bottom: 8px;
+}
+
+.recipe-nutrition {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.recipe-calories {
+    color: var(--text-light);
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.recipe-macros {
+    color: var(--text-muted);
+    font-size: 10px;
+}
+
+/* Стили для рецептов */
+.recipe-info {
+    padding: 20px;
+}
+
+.recipe-meta {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.recipe-category {
+    background: rgba(102, 126, 234, 0.2);
+    color: var(--primary-color);
+    padding: 8px 16px;
+    border-radius: 20px;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.recipe-nutrition-badges {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.nutrition-badge {
+    background: var(--light-bg);
+    padding: 8px 12px;
+    border-radius: 12px;
+    color: var(--text-light);
+    font-size: 12px;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.nutrition-badge i {
+    color: var(--primary-color);
+}
+
+.recipe-section {
+    margin-bottom: 25px;
+}
+
+.recipe-section:last-child {
+    margin-bottom: 0;
+}
+
+.recipe-section h4 {
+    color: var(--text-light);
+    font-size: 16px;
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.recipe-section h4 i {
+    color: var(--primary-color);
+}
+
+.ingredients-list,
+.instructions-list {
+    list-style: none;
+    padding: 0;
+}
+
+.ingredients-list li {
+    color: var(--text-light);
+    padding: 8px 0;
+    padding-left: 25px;
+    position: relative;
+    font-size: 15px;
+}
+
+.ingredients-list li:before {
+    content: "•";
+    color: var(--primary-color);
+    font-size: 24px;
+    position: absolute;
+    left: 0;
+    top: 2px;
+}
+
+.instructions-list li {
+    color: var(--text-light);
+    padding: 12px 0;
+    padding-left: 40px;
+    position: relative;
+    font-size: 15px;
+    line-height: 1.6;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.instructions-list li:last-child {
+    border-bottom: none;
+}
+
+.instructions-list li:before {
+    counter-increment: step-counter;
+    content: counter(step-counter);
+    position: absolute;
+    left: 0;
+    top: 12px;
+    background: var(--primary-color);
+    color: white;
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 14px;
+}
+
+.recipe-description {
+    color: var(--text-muted);
+    font-size: 15px;
+    line-height: 1.6;
+    padding: 15px;
+    background: var(--light-bg);
+    border-radius: 10px;
+}
+
+/* Кнопка заполнения недостающих калорий */
+.fill-calories-btn {
+    margin-top: 20px;
+    width: 100%;
+}
+
+/* Порционное окно */
+.portion-controls {
+    padding: 20px;
+}
+
+.portion-info {
+    margin-bottom: 20px;
+}
+
+.portion-info h4 {
+    color: var(--text-light);
+    margin-bottom: 15px;
+}
+
+.portion-nutrition {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.nutrition-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    background: var(--light-bg);
+    border-radius: 8px;
+}
+
+.nutrition-item span:first-child {
+    color: var(--text-muted);
+    font-size: 14px;
+}
+
+.nutrition-item span:last-child {
+    color: var(--text-light);
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.portion-slider {
+    margin-bottom: 20px;
+}
+
+.portion-slider label {
+    display: block;
+    color: var(--text-light);
+    margin-bottom: 10px;
+}
+
+.portion-slider input[type="range"] {
+    width: 100%;
+    height: 6px;
+    background: var(--border-color);
+    border-radius: 3px;
+    outline: none;
+    margin-bottom: 10px;
+    -webkit-appearance: none;
+}
+
+.portion-slider input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    width: 20px;
+    height: 20px;
+    background: var(--primary-color);
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.portion-value {
+    display: block;
+    text-align: center;
+    color: var(--text-light);
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.portion-buttons {
+    display: flex;
+    gap: 10px;
+    justify-content: flex-end;
+}
+
+/* Адаптивность */
+@media (max-width: 1200px) {
+    .setup-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .meals-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 900px) {
+    .meals-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 768px) {
+    .plan-header {
+        flex-direction: column;
+        align-items: stretch;
+    }
+    
+    .header-actions {
+        flex-direction: column;
+    }
+    
+    .section-header {
+        flex-direction: column;
+        align-items: stretch;
+    }
+    
+    .plan-actions {
+        flex-direction: column;
+        gap: 10px;
+    }
+    
+    .plan-controls {
+        flex-direction: column;
+        align-items: stretch;
+    }
+    
+    .week-navigation,
+    .day-navigation,
+    .plan-summary {
+        justify-content: center;
+    }
+    
+    .meals-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .bju-targets {
+        grid-template-columns: 1fr;
+    }
+    
+    .restrictions-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .recipes-list {
+        grid-template-columns: 1fr;
+    }
+    
+    .recipe-meta {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    
+    .portion-nutrition {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Анимации */
+@keyframes modalFadeIn {
+    from {
+        opacity: 0;
+        transform: scale(0.95);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+.modal-content {
+    animation: modalFadeIn 0.3s ease;
+}
+
+/* Индикаторы загрузки */
+.loading {
+    text-align: center;
+    padding: 40px;
+    color: var(--text-muted);
+}
+
+.loading i {
+    margin-right: 10px;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+/* Статус плана */
+.plan-status {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.status-indicator {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+}
+
+.status-indicator.good {
+    background: var(--success-color);
+}
+
+.status-indicator.warning {
+    background: var(--warning-color);
+}
+
+.status-indicator.bad {
+    background: var(--danger-color);
+}
+
+.status-text {
+    color: var(--text-muted);
+    font-size: 12px;
+}
+/* Добавьте в nutrition-plan.css */
+
+.dish-delete-btn {
+    background: transparent;
+    border: none;
+    color: var(--danger-color);
+    cursor: pointer;
+    padding: 5px;
+    margin-left: 10px;
+    opacity: 0.7;
+    transition: opacity 0.3s;
+    font-size: 12px;
+}
+
+.dish-delete-btn:hover {
+    opacity: 1;
+    transform: scale(1.1);
+}
+
+/* Улучшение отображения макронутриентов */
+.dish-macros {
+    color: var(--text-muted);
+    font-size: 11px;
+    display: flex;
+    gap: 5px;
+}
+
+.dish-macros span {
+    display: inline-block;
+    min-width: 20px;
+    text-align: center;
+}
+
+/* Индикаторы качества заполнения */
+.quality-indicator {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    padding: 3px 8px;
+    border-radius: 10px;
+    font-size: 11px;
+    font-weight: 600;
+}
+
+.quality-good {
+    background: rgba(16, 185, 129, 0.2);
+    color: var(--success-color);
+}
+
+.quality-medium {
+    background: rgba(245, 158, 11, 0.2);
+    color: var(--warning-color);
+}
+
+.quality-poor {
+    background: rgba(239, 68, 68, 0.2);
+    color: var(--danger-color);
+}
+
+/* Анимации для плавного поиска */
+.recipe-item {
+    transition: all 0.3s ease;
+}
+
+.search-loading {
+    animation: pulse 1.5s infinite;
+}
+
+@keyframes pulse {
+    0%, 100% { opacity: 0.5; }
+    50% { opacity: 1; }
+}
+
+/* Новые стили для выравнивания плашек */
+.macro-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 5px;
+    font-size: 12px;
+}
+
+.macro-label {
+    color: var(--text-muted);
+}
+
+.macro-value {
+    color: var(--text-light);
+    font-weight: 600;
+}
+
+/* Стили для кнопок в plan-actions */
+.plan-actions {
+    display: flex;
+    gap: 15px;
+    align-items: center;
+}
+
+@media (max-width: 768px) {
+    .plan-actions {
+        flex-direction: column;
+        width: 100%;
+    }
+    
+    .plan-actions .btn {
+        width: 100%;
+    }
+}
+/* Черный скроллбар для Webkit браузеров */
+::-webkit-scrollbar {
+    width: 12px;
+    height: 12px;
+}
+
+::-webkit-scrollbar-track {
+    background: #000;
+    border-radius: 6px;
+}
+
+::-webkit-scollbar-track:hover {
+    background: #111;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #333;
+    border-radius: 6px;
+    border: 2px solid #000;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #444;
+}
+
+::-webkit-scrollbar-thumb:active {
+    background: #555;
+}
+
+::-webkit-scrollbar-corner {
+    background: #000;
+}

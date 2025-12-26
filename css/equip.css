@@ -1,0 +1,508 @@
+/* Общие стили */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #000;
+    color: #fff;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.container {
+    width: 1280px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Header */
+.header {
+    background-color: #000;
+    padding: 20px 0;
+    position: fixed; /* Фиксируем header */
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000; /* Чтобы header был поверх других элементов */
+}
+
+/* Убираем внешние отступы у container в header */
+.header .container {
+    padding: 0; /* Убираем горизонтальные отступы */
+    width: 1280px;
+    margin: 0 auto;
+}
+
+.nav-list {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    list-style: none;
+    margin: 0;
+    padding: 0 20px; /* Добавляем отступы внутрь списка */
+    width: 100%; /* Занимает всю ширину контейнера */
+}
+
+/* Остальные стили остаются без изменений */
+.nav-logo {
+    flex-shrink: 0;
+}
+
+.nav-logo img {
+    height: 40px;
+    width: auto;
+}
+
+/* Центр навигации */
+.nav-center {
+    display: flex;
+    gap: 50px;
+    margin: 0 auto; /* Центрируем */
+}
+
+.nav-center li {
+    list-style: none;
+}
+
+.nav-center li a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 16px;
+    text-transform: uppercase;
+    transition: opacity 0.3s ease;
+}
+
+.nav-center li a:hover {
+    opacity: 0.7;
+}
+
+.nav-center a.active {
+    color: #4285f4;
+    position: relative;
+}
+
+.nav-center a.active::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: #4285f4;
+}
+
+
+
+.nav-auth img {
+    height: 40px;
+    width: auto;
+}
+
+/* Иконки авторизации / профиля */
+/* Новые классы для управления видимостью */
+.auth-icon-hidden {
+  display: none !important;
+}
+
+/* Показанный элемент с плавным появлением */
+.auth-icon-visible {
+  display: block !important;
+  animation: fadeIn 0.3s ease;
+}
+
+/* Контейнер для фиксированного размера */
+.nav-auth {
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.page-header {
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+.page-title {
+    font-size: 42px;
+    margin-bottom: 20px;
+    color: #fff;
+    font-weight: 700;
+    background: linear-gradient(90deg, #00a8ff, #005FFF);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+.equipment-page {
+    min-height: 100vh;
+    background-color: #000;
+    color: #005fff;
+    padding-top: 100px;
+    padding-bottom: 60px;
+}
+
+.equipment-header {
+    text-align: center;
+    margin-bottom: 40px;
+    padding: 0 20px;
+}
+
+.equipment-header p {
+    font-size: 38px;
+    color: #fff;
+    max-width: 600px;
+    margin: 50px auto 40px auto;
+    line-height: 1.5;
+}
+
+/* Контейнер с фильтрами */
+.equipment-filters {
+    max-width: 1200px;
+    margin: 0 auto 40px;
+    padding: 0 20px;
+}
+
+.filter-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.filter-btn {
+    background-color: #18191E;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 25px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.filter-btn:hover {
+    background-color: #2a2b33;
+    transform: translateY(-2px);
+}
+
+.filter-btn.active {
+    background-color: #0066ff;
+    color: white;
+}
+
+/* Сетка с инвентарем */
+.equipment-grid {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 30px;
+}
+
+.equipment-card {
+    background-color: #18191E;
+    border-radius: 15px;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.equipment-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 25px rgba(0, 102, 255, 0.2);
+    background-color: #1f2028;
+}
+
+.equipment-image {
+    width: 100%;
+    height: 200px;
+    overflow: hidden;
+    background-color: #2a2b33;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.equipment-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.equipment-card:hover .equipment-image img {
+    transform: scale(1.05);
+}
+
+.equipment-content {
+    padding: 20px;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.equipment-type {
+    display: inline-block;
+    background-color: rgba(0, 102, 255, 0.2);
+    color: #66a3ff;
+    padding: 5px 12px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: 10px;
+    align-self: flex-start;
+}
+
+.equipment-title {
+    font-size: 20px;
+    font-weight: 600;
+    margin-bottom: 10px;
+    line-height: 1.3;
+}
+
+.equipment-description {
+    font-size: 14px;
+    color: #aaa;
+    line-height: 1.5;
+    margin-bottom: 15px;
+    flex-grow: 1;
+}
+
+
+
+.feature-tag {
+    background-color: rgba(255, 255, 255, 0.1);
+    color: #ddd;
+    padding: 4px 10px;
+    border-radius: 12px;
+    font-size: 12px;
+}
+
+.equipment-rating {
+    display: flex;
+    align-items: center;
+    margin-top: 15px;
+    color: #FFD700;
+    font-size: 14px;
+}
+
+.rating-text {
+    margin-left: 8px;
+    color: #aaa;
+}
+
+/* Категории инвентаря */
+.category-card {
+    background: linear-gradient(135deg, #18191E 0%, #1a1b22 100%);
+    border-radius: 15px;
+    padding: 30px;
+    text-align: center;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.category-card:hover {
+    transform: translateY(-5px);
+    background: linear-gradient(135deg, #1f2028 0%, #23242d 100%);
+    box-shadow: 0 10px 20px rgba(0, 102, 255, 0.15);
+}
+
+.category-icon {
+    width: 70px;
+    height: 70px;
+    background-color: rgba(0, 102, 255, 0.1);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+    font-size: 30px;
+    color: #0066ff;
+}
+
+.category-title {
+    font-size: 22px;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+.category-count {
+    color: #66a3ff;
+    font-weight: 600;
+    font-size: 14px;
+}
+
+/* Адаптивность */
+@media (max-width: 768px) {
+    .equipment-grid {
+        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+        gap: 20px;
+    }
+    
+    .equipment-header h1 {
+        font-size: 32px;
+    }
+    
+    .filter-buttons {
+        justify-content: flex-start;
+        overflow-x: auto;
+        padding-bottom: 10px;
+    }
+}
+
+@media (max-width: 480px) {
+    .equipment-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .equipment-header h1 {
+        font-size: 28px;
+    }
+}
+
+/* Лоадер */
+.loader {
+    text-align: center;
+    padding: 40px;
+    color: #aaa;
+    font-size: 18px;
+}
+
+/* Пагинация (если понадобится) */
+.pagination {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 40px;
+    padding: 0 20px;
+}
+
+.page-btn {
+    background-color: #18191E;
+    color: #fff;
+    border: none;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.page-btn:hover {
+    background-color: #2a2b33;
+}
+
+.page-btn.active {
+    background-color: #0066ff;
+}
+
+.page-btn:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+.footer {
+    background-color: #000;
+    padding: 50px 0 30px;
+    border-top: 1px solid #333;
+    width: 100%;
+}
+
+
+.footer-content {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    max-width: 600px;
+    margin: 0 auto 40px auto;
+    gap: 50px;
+    text-align: center;
+}
+
+.footer-logo img {
+    height: 50px;
+    margin-bottom: 20px;
+}
+
+.footer-logo p {
+    color: #aaa;
+    font-size: 0.95rem;
+    line-height: 1.5;
+    word-wrap: break-word;
+}
+
+.footer-links h4 {
+    color: #fff;
+    font-size: 1.1rem;
+    margin-bottom: 20px;
+}
+
+.footer-links a {
+    display: block;
+    color: #aaa;
+    text-decoration: none;
+    margin-bottom: 12px;
+    font-size: 0.95rem;
+    transition: color 0.3s ease;
+    word-wrap: break-word;
+}
+
+.footer-links a:hover {
+    color: #005FFF;
+}
+
+.footer-bottom {
+    text-align: center;
+    padding-top: 30px;
+    border-top: 1px solid #333;
+    color: #666;
+    font-size: 0.9rem;
+    width: 100%;
+}
+/* Черный скроллбар для Webkit браузеров */
+::-webkit-scrollbar {
+    width: 12px;
+    height: 12px;
+}
+
+::-webkit-scrollbar-track {
+    background: #000;
+    border-radius: 6px;
+}
+
+::-webkit-scollbar-track:hover {
+    background: #111;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #333;
+    border-radius: 6px;
+    border: 2px solid #000;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #444;
+}
+
+::-webkit-scrollbar-thumb:active {
+    background: #555;
+}
+
+::-webkit-scrollbar-corner {
+    background: #000;
+}
