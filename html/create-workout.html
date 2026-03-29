@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Генератор тренировочных программ | FitGy</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="../css/create-workout.css">
+    <script type="module" src="../js/auth-state.js"></script>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <nav class="nav">
+                <ul class="nav-list">
+                    <li class="nav-logo">
+                        <a href="../index.html">
+                            <img src="../img/logo/logo.png" alt="Логотип FitGy">
+                        </a>
+                    </li>
+
+                    <ul class="nav-center">
+                        <li><a href="body.html">3D-Модель</a></li>
+                        <li><a href="training.html">Тренировки</a></li>
+                        <li><a href="food.html">Питание</a></li>
+                        <li><a href="equip.html">Экипировка</a></li>
+                        <li><a href="place.html">Места тренировок</a></li>
+                    </ul>
+
+                    <li class="nav-auth">
+                        <a href="login.html" id="auth-icon" class="auth-icon-hidden">
+                            <img src="../img/logo/auth.png" alt="Авторизация">
+                        </a>
+                        <a href="profile.html" id="profile-icon" class="auth-icon-hidden">
+                            <img src="../img/logo/profile.png" alt="Профиль">
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    
+    <!-- Main Content -->
+    <main class="container">
+        <!-- Setup Section (Initial State) -->
+        <section id="setupSection" class="setup-section">
+            <div class="page-header">
+                <h1 class="page-title"><i class="fas fa-cogs"></i> Настройте вашу программу</h1>
+                <p class="page-description">
+                    Выберите параметры, чтобы создать персонализированную программу тренировок на 4 недели
+                </p>
+            </div>
+            
+            <div class="main-content">
+                <!-- Control Panel -->
+                <div class="control-panel">
+                    <h2 class="section-title"><i class="fas fa-sliders-h"></i> Параметры программы</h2>
+                    
+                    <!-- Program Type -->
+                    <div class="form-group">
+                        <label for="programType"><i class="fas fa-list-alt"></i> Тип программы:</label>
+                        <select id="programType">
+                            <option value="Фуллбади">Фуллбади (все тело за тренировку)</option>
+                            <option value="Сплит" selected>Сплит (разделение по группам мышц)</option>
+                            <option value="Верх/Низ">Верх/Низ (чередование верха и низа)</option>
+                            <option value="Тяни/Толкай">Тяни/Толкай (по функциям мышц)</option>
+                        </select>
+                    </div>
+                    
+                    <!-- User Level -->
+                    <div class="form-group">
+                        <label for="userLevel"><i class="fas fa-user"></i> Уровень подготовки:</label>
+                        <select id="userLevel">
+                            <option value="Новичок">Новичок (12-15 повторений)</option>
+                            <option value="Средний" selected>Средний (8-12 повторений)</option>
+                            <option value="Продвинутый">Продвинутый (5-8 повторений)</option>
+                        </select>
+                    </div>
+                    
+                    <!-- Equipment -->
+                    <div class="form-group">
+                        <label><i class="fas fa-tools"></i> Доступное оборудование:</label>
+                        <div class="checkbox-group">
+                            <div class="checkbox-item">
+                                <input type="checkbox" id="equip1" checked>
+                                <label for="equip1">Штанга</label>
+                            </div>
+                            <div class="checkbox-item">
+                                <input type="checkbox" id="equip2" checked>
+                                <label for="equip2">Гантели</label>
+                            </div>
+                            <div class="checkbox-item">
+                                <input type="checkbox" id="equip3" checked>
+                                <label for="equip3">Тренажеры</label>
+                            </div>
+                            <div class="checkbox-item">
+                                <input type="checkbox" id="equip4" checked>
+                                <label for="equip4">Без оборудования</label>
+                            </div>
+                            <div class="checkbox-item">
+                                <input type="checkbox" id="equip5">
+                                <label for="equip5">Турник/брусья</label>
+                            </div>
+                            <div class="checkbox-item">
+                                <input type="checkbox" id="equip6">
+                                <label for="equip6">Гири</label>
+                            </div>
+                            <div class="checkbox-item">
+                                <input type="checkbox" id="equip7">
+                                <label for="equip7">Эспандеры</label>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Training Days -->
+                    <div class="form-group">
+                        <label for="daysPerWeek"><i class="fas fa-calendar-alt"></i> Дней тренировок в неделю:</label>
+                        <select id="daysPerWeek">
+                            <option value="3">3 дня</option>
+                            <option value="4" selected>4 дня</option>
+                            <option value="5">5 дней</option>
+                            <option value="6">6 дней</option>
+                        </select>
+                    </div>
+                    
+                    <!-- Generate Button -->
+                    <button id="generateBtn" class="btn">
+                        <i class="fas fa-bolt"></i> Сгенерировать программу на 4 недели
+                    </button>
+                </div>
+                
+                <!-- Training Principles -->
+                <div class="principles">
+                    <h2 class="section-title"><i class="fas fa-graduation-cap"></i> Принципы эффективных тренировок</h2>
+                    <div class="principles-grid">
+                        <div class="principle-card">
+                            <div class="principle-icon">
+                                <i class="fas fa-bolt"></i>
+                            </div>
+                            <h3 class="principle-title">Стимул</h3>
+                            <p>Каждая тренировка должна давать достаточный стресс мышцам для запуска роста</p>
+                        </div>
+                        
+                        <div class="principle-card">
+                            <div class="principle-icon">
+                                <i class="fas fa-bed"></i>
+                            </div>
+                            <h3 class="principle-title">Восстановление</h3>
+                            <p>Мышцы растут во время отдыха, а не тренировки. Соблюдайте время восстановления</p>
+                        </div>
+                        
+                        <div class="principle-card">
+                            <div class="principle-icon">
+                                <i class="fas fa-calendar-check"></i>
+                            </div>
+                            <h3 class="principle-title">Регулярность</h3>
+                            <p>Систематические тренировки по расписанию - ключ к прогрессу</p>
+                        </div>
+                        
+                        <div class="principle-card">
+                            <div class="principle-icon">
+                                <i class="fas fa-chart-line"></i>
+                            </div>
+                            <h3 class="principle-title">Прогрессия</h3>
+                            <p>Постепенно увеличивайте нагрузку: вес, повторения или подходы</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Recovery Section (Always Visible) -->
+        <section class="principles recovery-section">
+            <div class="recovery-header">
+                <h2><i class="fas fa-heartbeat"></i> Время восстановления мышц</h2>
+            </div>
+            
+            <div class="recovery-table-wrapper">
+                <table class="recovery-table">
+                    <thead>
+                        <tr>
+                            <th>Группа мышц</th>
+                            <th>Время восстановления</th>
+                            <th>Рекомендуемая частота</th>
+                        </tr>
+                    </thead>
+                    <tbody id="recoveryTableBody">
+                        <!-- Данные заполняются через JavaScript -->
+                    </tbody>
+                </table>
+            </div>
+        </section>
+        
+        <!-- Results Section (Hidden Initially) -->
+        <section id="resultsSection" class="results-section hidden">
+            <!-- Program Output -->
+            <div class="result-panel fade-in">
+                <div id="programOutput">
+                    <div class="empty-state">
+                        <i class="fas fa-dumbbell"></i>
+                        <h3>Программа не сгенерирована</h3>
+                        <p>Настройте параметры и нажмите "Сгенерировать программу"</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    
+<footer class="footer">
+        <div class="container-footer">
+            <div class="footer-content">
+                <div class="footer-links">
+                    <h4>Разделы</h4>
+                    <a href="body.html">3D-Модель</a>
+                    <a href="training.html">Тренировки</a>
+                    <a href="place.html">Места посещения</a>
+                </div>
+                <div class="footer-links">
+                    <h4>Ресурсы</h4>
+                    <a href="food.html">Питание</a>
+                    <a href="equip.html">Экипировка</a>
+                    <a href="docs.html">Документация</a>
+                </div>
+                <div class="footer-links footer-contacts">
+                <h4>Контакты</h4>
+                <div class="contacts-container">
+                    <a href="https://vk.com/FIT_GY" target="_blank" class="contact-link">
+                        <i class="contact-icon fab fa-vk"></i>
+                        <span>ВКонтакте</span>
+                    </a>
+                    <a href="https://t.me/FIT_GY" target="_blank" class="contact-link">
+                        <i class="contact-icon fab fa-telegram"></i>
+                        <span>Telegram</span>
+                    </a>
+                    <a href="mailto:fitngy@gmail.com?subject=Вопрос&body=Здравствуйте!" class="contact-link">
+                        <span>Написать писмьо</span>
+                    </a>
+                </div>
+            </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 FitGy. Все права защищены.</p>
+            </div>
+        </div>
+    </footer>
+    
+    <!-- Scripts -->
+    <script src="../js/exercises.js"></script>
+    <script src="../js/create-workout.js"></script>
+</body>
+</html>

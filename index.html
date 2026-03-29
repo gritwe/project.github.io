@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FitGy</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body>
+
+    <header class="header">
+        <div class="container">
+            <nav class="nav">
+                <ul class="nav-list">
+                    <li class="nav-logo">
+                        <a href="index.html">
+                            <img src="img/logo/logo.png" alt="Логотип FitGy">
+                        </a>
+                    </li>
+                    <div class="nav-center">
+                        <li><a href="html/body.html">3D-Модель</a></li>
+                        <li><a href="html/training.html">Тренировки</a></li>
+                        <li><a href="html/food.html">Питание</a></li>
+                        <li><a href="html/equip.html">Экипировка</a></li>
+                        <li><a href="html/place.html">Места тренировок</a></li>
+                    </div>
+                    <!-- Иконка авторизации (показывается когда пользователь не вошел) -->
+                    <li class="nav-auth">
+                    <a href="html/login.html" id="auth-icon" class="auth-icon-hidden">
+                        <img src="img/logo/auth.png" alt="Авторизация">
+                    </a>
+                    <a href="html/profile.html" id="profile-icon" class="auth-icon-hidden">
+                        <img src="img/logo/profile.png" alt="Профиль">
+                    </a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <section class="hero">
+    <div class="container">
+        <div class="hero-text">
+            <h1>FitGy — персональная фитнес-платформа</h1>
+            <p>
+                Найдите тренировку под ваши цели, изучите мышцы,
+                получите рекомендации по питанию или экипировке
+            </p>
+        </div>
+        <img class="hero-image" src="img/hero.png" alt="Главный баннер">
+    </div>
+    </section>
+<!-- Activities -->
+<section class="activities">
+    <div class="container">
+        <h2>Выберите, чем хотите заняться</h2>
+        <div class="activities-cards">
+            <a href="html/create-workout.html">  
+                <div class="activity-card">
+                    <img src="img/slider1/training.png" alt="">
+                    <p>Подобрать тренировку</p>
+                </div>
+            </a>
+            <a href="html/body.html">
+                <div class="activity-card">
+                    <img src="img/slider1/muscle.png" alt="">
+                    <p>Изучить<br>мышцы</p>
+                </div>
+            </a>
+            <a href="html/food.html">
+                <div class="activity-card">
+                    <img src="img/slider1/food.png" alt="">
+                    <p>Советы по питанию</p>
+                </div>
+            </a>
+            <a href="html/equip.html">
+                <div class="activity-card">
+                    <img src="img/slider1/equip.png" alt="">
+                    <p>Обзор экипировки</p>
+                </div>
+            </a>
+            <a href="html/place.html">
+                <div class="activity-card">
+                    <img src="img/slider1/location.png" alt="">
+                    <p>Места для тренировок</p>
+                </div>
+            </a>
+        </div>
+    </div>
+</section>
+
+<!-- Why FitGy / Carousel -->
+<section class="why-fitgy">
+    <div class="container">
+        <h2>Почему именно FITGY?</h2>
+        <div class="carousel">
+            <button class="carousel-arrow left"></button>
+            <button class="carousel-arrow right"></button>
+
+            <div class="carousel-slides">
+                <div class="carousel-slide active">
+                    <h3>Персонализация тренировок</h3>
+                    <p>Выберите группу мышц и получите упражнения, соответствующие вашим целям и уровню подготовки</p>
+                </div>
+                <div class="carousel-slide">
+                    <h3>Контроль прогресса</h3>
+                    <p>Отслеживайте свой рост и корректируйте тренировки для максимальной эффективности</p>
+                </div>
+                <div class="carousel-slide">
+                    <h3>Удобство и доступность</h3>
+                    <p>Тренируйтесь в любое время и в любом месте с нашим мобильным приложением</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+ <!-- TRAINING PROGRAMS -->
+<section class="trainings">
+    <div class="container">
+        <h2>Программы на основе ваших предпочтений</h2>
+        <div class="trainings-grid">
+            <a href="html/create-workout.html">
+                <div class="training-card">
+                    <div class="training-image">
+                        <img src="img/program/weight.jpg" alt="Базовые тренировки">
+                    </div>
+                    <div class="training-content">
+                        <h3>Базовые тренировки</h3>
+                        <p>Комплексные программы для начинающих. Укрепление мышц, повышение выносливости и улучшение общего тонуса</p>
+                    </div>
+                </div>
+            </a>
+            
+            <a href="html/muscle-exercises.html">
+                <div class="training-card reverse">
+                            <div class="training-image">
+                                <img src="img/program/yoga.jpg" alt="Специализированные тренировки">
+                            </div>
+                            <div class="training-content">
+                                <h3>Упражнения по группам мышц</h3>
+                                <p>Получите реккомендации упражнений на конкретные мышцы</p>
+                            </div>
+                </div>
+            </a>
+    </div>
+</section>
+<!-- NUTRITION -->
+    <section class="nutrition">
+        <div class="container">
+            <h2>Питание</h2>
+            <p class="subtitle">Получите рекомендации по питанию, которые помогут поддерживать здоровый образ жизни и достигать спортивных целей</p>
+            <div class="nutrition-cards">
+                <a href="html/nutrition.html">
+                    <div class="nutrition-card">
+                        <div class="nutrition-header">
+                            <h3>Проверка продуктов на БЖУ</h3>
+                            <i class="fa-solid fa-plate-wheat"></i>
+                        </div>
+                        <p>Проверьте продукт с помощью нашей платформы на состав</p>
+                    </div>
+                </a>
+                <a href="html/nutrition-plan.html">
+                    <div class="nutrition-card">
+                        <div class="nutrition-header">
+                            <h3>Персонализированные программы питания</h3>
+                            <i class="fa-solid fa-bowl-food"></i>
+                        </div>
+                        <p>Индивидуальный план питания, соответствующий вашему образу жизни, целям и предпочтениям</p>
+                    </div>
+                </a>
+                <a href="html/food.html">
+                    <div class="nutrition-card">
+                        <div class="nutrition-header">
+                            <h3>Калькулятор <br>БЖУ</h3>
+                            <i class="fa-solid fa-calculator"></i>
+                        </div>
+                        <p>Расчитайте необходимые Вам параметры БЖУ</p>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </section>
+    <!-- EQUIPMENT -->
+    <section class="equipment">
+        <div class="container">
+            <h2>Подбор спортивной экипировки</h2>
+            <p class="subtitle">FitGy поможет подобрать экипировку, соответствующую вашим потребностям и стилю тренировок</p>
+            <div class="equipment-cards">
+                <a href="html/equip.html">
+                    <div class="equipment-card">
+                        <div class="equipment-image"><img src="img/equip/equip1.png" alt="#"></div>
+                        <div class="equipment-content">
+                            <h3>Рекомендация спортивной экипировки</h3>
+                            <p>Персонализированные рекомендации по экипировке с учетом ваших целей, вида спорта и бюджета</p>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- TRAINING LOCATIONS -->
+    <section class="training-locations">
+        <div class="container">
+            <h2>Поиск мест для тренировок</h2>
+            <p class="description">Найдите удобные места для тренировок с помощью нашего поиска. Мы учитываем ваши предпочтения и предлагаем наиболее подходящие варианты</p>
+            
+            <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+            <div class="location-columns">
+                <div class="location-column">
+                    <a href="html/place.html?search=фитнес клуб" class="location-link">
+                        <div class="location-card">
+                            <div class="card-header">
+                                <h3>Фитнес-клубы</h3>
+                                <span class="material-icons location-icon">location_on</span>
+                            </div>
+                            <p>Найдите ближайший фитнес-клуб с нужным оборудованием и программами тренировок</p>
+                        </div>
+                    </a>
+                    
+                    <a href="html/place.html?search=бассейн" class="location-link">
+                        <div class="location-card">
+                            <div class="card-header">
+                                <h3>Бассейны</h3>
+                                <span class="material-icons location-icon">location_on</span>
+                            </div>
+                            <p>Найдите места для плавания и водных тренировок</p>
+                        </div>
+                    </a>
+                    
+                    <a href="html/place.html?search=йога студия" class="location-link">
+                        <div class="location-card">
+                            <div class="card-header">
+                                <h3>Йога-студии</h3>
+                                <span class="material-icons location-icon">location_on</span>
+                            </div>
+                            <p>Занятия йогой с квалифицированными инструкторами</p>
+                        </div>
+                    </a>
+                    
+                    <a href="html/place.html?search=тренажерный зал" class="location-link">
+                        <div class="location-card">
+                            <div class="card-header">
+                                <h3>Тренажерные залы</h3>
+                                <span class="material-icons location-icon">location_on</span>
+                            </div>
+                            <p>Залы с силовым и кардио оборудованием для индивидуальных тренировок</p>
+                        </div>
+                    </a>
+                </div>
+
+                <div class="location-column">
+                    <a href="html/place.html?search=стадион" class="location-link">
+                        <div class="location-card">
+                            <div class="card-header">
+                                <h3>Стадионы</h3>
+                                <span class="material-icons location-icon">location_on</span>
+                            </div>
+                            <p>Стадионы для спортивных мероприятий и тренировок</p>
+                        </div>
+                    </a>
+                    
+                    <a href="html/place.html?search=спортивная площадка" class="location-link">
+                        <div class="location-card">
+                            <div class="card-header">
+                                <h3>Спортивные площадки</h3>
+                                <span class="material-icons location-icon">location_on</span>
+                            </div>
+                            <p>Открытые спортивные площадки для тренировок на свежем воздухе</p>
+                        </div>
+                    </a>
+                    
+                    <a href="html/place.html?search=бокс зал" class="location-link">
+                        <div class="location-card">
+                            <div class="card-header">
+                                <h3>Бокс-залы</h3>
+                                <span class="material-icons location-icon">location_on</span>
+                            </div>
+                            <p>Залы для занятий боксом и другими единоборствами</p>
+                        </div>
+                    </a>
+                    
+                    <a href="html/place.html?search=баскетбол площадка" class="location-link">
+                        <div class="location-card">
+                            <div class="card-header">
+                                <h3>Баскетбольные площадки</h3>
+                                <span class="material-icons location-icon">location_on</span>
+                            </div>
+                            <p>Открытые и закрытые площадки для игры в баскетбол</p>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </section>
+        <footer class="footer">
+    <div class="container">
+        <div class="footer-content">
+            <div class="footer-links">
+                <h4>Разделы</h4>
+                <a href="html/body.html">3D-Модель</a>
+                <a href="html/training.html">Тренировки</a>
+                <a href="html/place.html">Места посещения</a>
+            </div>
+            <div class="footer-links">
+                <h4>Ресурсы</h4>
+                <a href="html/food.html">Питание</a>
+                <a href="html/equip.html">Экипировка</a>
+                <a href="html/profile.html">Личный кабинет</a>
+            </div>
+            <div class="footer-links footer-contacts">
+                <h4>Контакты</h4>
+                <div class="contacts-container">
+                    <a href="https://vk.com/FIT_GY" target="_blank" class="contact-link">
+                        <i class="contact-icon fab fa-vk"></i>
+                        <span>ВКонтакте</span>
+                    </a>
+                    <a href="https://t.me/FIT_GY" target="_blank" class="contact-link">
+                        <i class="contact-icon fab fa-telegram"></i>
+                        <span>Telegram</span>
+                    </a>
+                    <a href="mailto:fitngy@gmail.com?subject=Вопрос&body=Здравствуйте!" class="contact-link">
+                        <span>Написать письмо</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Выносим footer-bottom за пределы основного контейнера -->
+    <div class="footer-bottom">
+        <p>&copy; 2025 FitGy. Все права защищены.</p>
+    </div>
+</footer>
+<script type="module" src="js/auth-state.js"></script>
+<script src="js/script_index.js"></script>
+</body>
+</html>

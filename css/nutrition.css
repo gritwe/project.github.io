@@ -1,0 +1,822 @@
+/* Общие стили */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #000;
+    color: #fff;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.container {
+    width: 1280px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Header */
+.header {
+    background-color: #000;
+    padding: 20px 0;
+    position: fixed; /* Фиксируем header */
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000; /* Чтобы header был поверх других элементов */
+}
+
+/* Убираем внешние отступы у container в header */
+.header .container {
+    padding: 0; /* Убираем горизонтальные отступы */
+    width: 1280px;
+    margin: 0 auto;
+}
+
+.nav-list {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    list-style: none;
+    margin: 0;
+    padding: 0 20px; /* Добавляем отступы внутрь списка */
+    width: 100%; /* Занимает всю ширину контейнера */
+}
+
+/* Остальные стили остаются без изменений */
+.nav-logo {
+    flex-shrink: 0;
+}
+
+.nav-logo img {
+    height: 40px;
+    width: auto;
+}
+
+/* Центр навигации */
+.nav-center {
+    display: flex;
+    gap: 50px;
+    margin: 0 auto; /* Центрируем */
+}
+
+.nav-center li {
+    list-style: none;
+}
+
+.nav-center li a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 16px;
+    text-transform: uppercase;
+    transition: opacity 0.3s ease;
+}
+
+.nav-center li a:hover {
+    opacity: 0.7;
+}
+
+.nav-center a.active {
+    color: #4285f4;
+    position: relative;
+}
+
+.nav-center a.active::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: #4285f4;
+}
+
+
+
+.nav-auth img {
+    height: 40px;
+    width: auto;
+}
+
+/* Иконки авторизации / профиля */
+/* Новые классы для управления видимостью */
+.auth-icon-hidden {
+  display: none !important;
+}
+
+/* Показанный элемент с плавным появлением */
+.auth-icon-visible {
+  display: block !important;
+  animation: fadeIn 0.3s ease;
+}
+
+/* Контейнер для фиксированного размера */
+.nav-auth {
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+.page-header {
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+.page-title {
+    font-size: 42px;
+    margin-bottom: 20px;
+    color: #fff;
+    font-weight: 700;
+    background: linear-gradient(90deg, #00a8ff, #005FFF);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.page-description {
+    font-size: 18px;
+    color: #aaa;
+    max-width: 800px;
+    margin: 0 auto 30px;
+    line-height: 1.7;
+}
+.products-hero {
+    background: #000;
+    padding: 80px 0 20px 0;
+    text-align: center;
+    margin-top: 20px;
+}
+
+.products-hero h1 {
+    font-size: 42px;
+    font-weight: 700;
+    color: #fff;
+}
+
+.products-hero p {
+    font-size: 20px;
+    color: rgba(255, 255, 255, 0.9);
+    max-width: 600px;
+    margin: 0 auto;
+    line-height: 1.6;
+}
+
+/* Search Section */
+.products-search {
+    background-color: #000;
+    padding: 10px 0 40px 0;
+}
+
+.search-container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.search-box {
+    position: relative;
+    background-color: #18191E;
+    border-radius: 50px;
+    padding: 15px 30px;
+    display: flex;
+    align-items: center;
+    margin-bottom: 40px;
+}
+
+.search-box i {
+    color: #4a90e2;
+    font-size: 20px;
+    margin-right: 15px;
+}
+
+.search-box input {
+    flex: 1;
+    background: transparent;
+    border: none;
+    color: #fff;
+    font-size: 18px;
+    font-family: 'Montserrat', sans-serif;
+    outline: none;
+}
+
+.search-box input::placeholder {
+    color: #666;
+}
+
+.clear-btn {
+    background: none;
+    border: none;
+    color: #666;
+    cursor: pointer;
+    font-size: 18px;
+    padding: 5px;
+    transition: color 0.3s;
+}
+
+.clear-btn:hover {
+    color: #fff;
+}
+
+/* Filters */
+.filters {
+    margin-bottom: 20px;
+}
+
+.category-filter h3 {
+    font-size: 26px;
+    margin-bottom: 40px;
+    color: #fff;
+    text-align: center;
+}
+
+/* ТЕКСТОВЫЕ КАТЕГОРИИ С СЕРЫМ ФОНОМ И ЦЕНТРИРОВАНИЕМ */
+.category-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-top: 15px;
+    justify-content: center;
+    align-items: center;
+}
+
+.category-btn {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 12px 20px;
+    background: #2a2b30 !important; /* Серый фон */
+    border: 2px solid #333 !important;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-size: 14px;
+    min-width: 100px;
+    text-align: center;
+    color: #fff !important;
+}
+
+.category-btn:hover {
+    background: #3a3b40 !important;
+    border-color: #4a90e2 !important;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(74, 144, 226, 0.2);
+}
+
+.category-btn.active {
+    background: #4a90e2 !important;
+    border-color: #4a90e2 !important;
+    color: white !important;
+    box-shadow: 0 4px 12px rgba(74, 144, 226, 0.3);
+}
+
+.category-name {
+    font-weight: 600;
+    margin-bottom: 4px;
+    text-align: center;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 100%;
+    font-size: 13px;
+}
+
+.category-count {
+    background: rgba(255, 255, 255, 0.15);
+    color: inherit;
+    padding: 2px 8px;
+    border-radius: 12px;
+    font-size: 11px;
+    font-weight: 500;
+}
+
+.category-btn.active .category-count {
+    background: rgba(255, 255, 255, 0.3);
+}
+
+/* Active Filters */
+.search-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: #888;
+    font-size: 14px;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.active-filters {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+    margin-top: 10px;
+}
+
+.filter-tag {
+    background-color: #2a2b30;
+    color: white;
+    padding: 6px 12px;
+    border-radius: 20px;
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    border: 1px solid #333;
+}
+
+.filter-icon {
+    font-size: 16px;
+}
+
+.filter-text {
+    font-weight: 500;
+}
+
+.filter-tag .remove {
+    cursor: pointer;
+    font-size: 18px;
+    color: #888;
+    font-weight: bold;
+    line-height: 1;
+    padding: 0 4px;
+    margin-left: 6px;
+}
+
+.filter-tag .remove:hover {
+    color: #ff6b6b;
+}
+
+/* Products Main */
+.products-main {
+    padding: 40px 0 0 0;
+    background-color: #000;
+}
+
+.products-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 40px;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.products-header h2 {
+    font-size: 32px;
+    font-weight: 600;
+    color: #fff;
+}
+
+.sort-options {
+    display: flex;
+    gap: 10px;
+}
+
+.sort-btn {
+    background-color: #18191E;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 25px;
+    cursor: pointer;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+    transition: all 0.3s;
+}
+
+.sort-btn:hover {
+    background-color: #2a2b30;
+}
+
+.sort-btn.active {
+    background-color: #4a90e2;
+    color: #fff;
+}
+
+/* Products Grid */
+.products-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 30px;
+    margin-bottom: 50px;
+    justify-content: center;
+}
+
+.product-card {
+    background-color: #18191E;
+    border-radius: 20px;
+    padding: 25px;
+    transition: all 0.3s ease;
+    border: 2px solid transparent;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    min-height: 280px;
+}
+
+.product-card:hover {
+    transform: translateY(-5px);
+    border-color: #4a90e2;
+    box-shadow: 0 10px 20px rgba(74, 144, 226, 0.2);
+}
+
+/* Заголовок продукта с исправлением для длинных названий */
+.product-header {
+    display: flex;
+    align-items: flex-start; /* Выравнивание по верху для работы с длинными названиями */
+    justify-content: space-between;
+    margin-bottom: 20px;
+    gap: 10px;
+    flex-shrink: 0;
+}
+
+.product-name-container {
+    flex: 1;
+    min-width: 0; /* КРИТИЧНО для работы text-overflow */
+}
+
+.product-name {
+    font-size: 18px;
+    font-weight: 600;
+    color: #fff;
+    line-height: 1.4;
+    margin: 0;
+    
+    /* Многострочное обрезание текста */
+    display: -webkit-box;
+    -webkit-line-clamp: 2; /* Максимум 2 строки */
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-height: calc(1.4em * 2); /* Высота для 2 строк */
+    
+    /* Fallback для Firefox и других браузеров */
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+/* Иконка категории в правом верхнем углу */
+.product-category-icon {
+    flex-shrink: 0;
+    font-size: 28px;
+    line-height: 1;
+    margin-top: 0; /* Убрали отступ, чтобы иконка была на одном уровне */
+}
+
+.nutrition-values {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+    margin: 15px 0;
+    flex-shrink: 0;
+}
+
+.nutrition-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 12px 8px;
+    background-color: #0f1013;
+    border-radius: 12px;
+    text-align: center;
+}
+
+.nutrition-value {
+    font-size: 20px;
+    font-weight: 700;
+    margin-bottom: 5px;
+}
+
+.nutrition-label {
+    font-size: 12px;
+    color: #888;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+/* Color coding for nutrition values */
+.protein {
+    color: #4a90e2;
+}
+
+.fat {
+    color: #f39c12;
+}
+
+.carbs {
+    color: #2ecc71;
+}
+
+.calories {
+    color: #e74c3c;
+}
+
+.product-calories {
+    margin-top: auto;
+    padding-top: 15px;
+    border-top: 1px solid #333;
+    text-align: center;
+    flex-shrink: 0;
+}
+
+.calories-badge {
+    display: inline-block;
+    background: linear-gradient(135deg, #e74c3c 0%, #c0392b 100%);
+    color: white;
+    padding: 8px 16px;
+    border-radius: 20px;
+    font-weight: 600;
+    font-size: 16px;
+}
+
+/* No Results */
+.no-results {
+    text-align: center;
+    padding: 60px 20px;
+    color: #666;
+    grid-column: 1 / -1;
+}
+
+.no-results i {
+    font-size: 60px;
+    color: #4a90e2;
+    margin-bottom: 20px;
+}
+
+.no-results h3 {
+    font-size: 24px;
+    margin-bottom: 10px;
+    color: #fff;
+}
+
+.no-results p {
+    color: #888;
+}
+
+/* Pagination */
+.pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    margin-top: 40px;
+}
+
+.page-btn {
+    background-color: #18191E;
+    color: #fff;
+    border: none;
+    width: 40px;
+    height: 40px;
+    border-radius: 8px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s;
+}
+
+.page-btn:hover {
+    background-color: #2a2b30;
+}
+
+.page-btn.active {
+    background-color: #4a90e2;
+    color: #fff;
+}
+
+.page-btn:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+/* Hidden class */
+.hidden {
+    display: none !important;
+}
+
+/* Nutrition Info */
+.nutrition-info {
+    background-color: #0a0a0a;
+    padding: 40px 0;
+}
+
+.nutrition-info h2 {
+    text-align: center;
+    font-size: 36px;
+    margin-bottom: 50px;
+    color: #fff;
+}
+
+.info-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+}
+
+.info-card {
+    background-color: #18191E;
+    border-radius: 20px;
+    padding: 30px;
+    text-align: center;
+    transition: transform 0.3s;
+}
+
+.info-card:hover {
+    transform: translateY(-5px);
+}
+
+.info-icon {
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 20px;
+    font-size: 30px;
+}
+
+.info-icon.protein {
+    background-color: rgba(74, 144, 226, 0.1);
+    color: #4a90e2;
+}
+
+.info-icon.fat {
+    background-color: rgba(243, 156, 18, 0.1);
+    color: #f39c12;
+}
+
+.info-icon.carb {
+    background-color: rgba(46, 204, 113, 0.1);
+    color: #2ecc71;
+}
+
+.info-icon.calorie {
+    background-color: rgba(231, 76, 60, 0.1);
+    color: #e74c3c;
+}
+
+.info-card h3 {
+    font-size: 20px;
+    margin-bottom: 15px;
+    color: #fff;
+}
+
+.info-card p {
+    color: #aaa;
+    font-size: 16px;
+    line-height: 1.5;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .products-hero h1 {
+        font-size: 32px;
+    }
+    
+    .products-hero p {
+        font-size: 18px;
+    }
+    
+    .products-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 20px;
+    }
+    
+    .sort-options {
+        width: 100%;
+        justify-content: space-between;
+    }
+    
+    .sort-btn {
+        flex: 1;
+        text-align: center;
+        font-size: 13px;
+        padding: 8px 12px;
+    }
+    
+    .products-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .info-cards {
+        grid-template-columns: 1fr;
+    }
+    
+    .category-buttons {
+        justify-content: center;
+    }
+    
+    .search-info {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+    }
+    
+    .product-name {
+        font-size: 16px;
+        -webkit-line-clamp: 2;
+        max-height: calc(1.4em * 2);
+    }
+    
+    .product-category-icon {
+        font-size: 24px;
+    }
+    
+    .nutrition-value {
+        font-size: 18px;
+    }
+    
+    .calories-badge {
+        font-size: 14px;
+        padding: 6px 14px;
+    }
+    
+    /* Адаптивность для категорий */
+    .category-buttons {
+        gap: 8px;
+    }
+    
+    .category-btn {
+        padding: 10px 16px;
+        min-width: 90px;
+        font-size: 13px;
+    }
+    
+    .category-name {
+        font-size: 12px;
+    }
+}
+
+@media (max-width: 480px) {
+    .product-card {
+        padding: 20px;
+    }
+    
+    .product-name {
+        font-size: 15px;
+        -webkit-line-clamp: 2;
+    }
+    
+    .nutrition-values {
+        gap: 12px;
+    }
+    
+    .nutrition-item {
+        padding: 10px 6px;
+    }
+    
+    .nutrition-value {
+        font-size: 16px;
+    }
+    
+    .category-btn {
+        padding: 8px 12px;
+        min-width: 80px;
+    }
+    
+    .category-name {
+        font-size: 11px;
+    }
+}
+/* Черный скроллбар для Webkit браузеров */
+::-webkit-scrollbar {
+    width: 12px;
+    height: 12px;
+}
+
+::-webkit-scrollbar-track {
+    background: #000;
+    border-radius: 6px;
+}
+
+::-webkit-scollbar-track:hover {
+    background: #111;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #333;
+    border-radius: 6px;
+    border: 2px solid #000;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #444;
+}
+
+::-webkit-scrollbar-thumb:active {
+    background: #555;
+}
+
+::-webkit-scrollbar-corner {
+    background: #000;
+}

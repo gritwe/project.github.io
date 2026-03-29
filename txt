@@ -1,0 +1,1184 @@
+// Полная база данных упражнений (130 упражнений)
+const exercisesData = [
+    // ================= ГРУДЬ (1-15) =================
+    {
+        id: 1,
+        title: "Жим штанги лежа", \
+        englishTitle: "barbell_bench_press",
+        description: "Базовое упражнение для грудных мышц на горизонтальной скамье.",
+        muscleGroup: "Грудь",
+        category: "upper",
+        difficulty: "medium",
+        equipment: "Штанга",
+        icon: "fas fa-weight-hanging"
+    },
+    {
+        id: 2,
+        title: "Разведение гантелей лежа на горизонтальной скамье", \
+        englishTitle: "dumbbell_flyes",
+        description: "Изолирующее упражнение для растяжки и развития грудных мышц.",
+        muscleGroup: "Грудь",
+        category: "upper",
+        difficulty: "medium",
+        equipment: "Гантели",
+        icon: "fas fa-arrows-alt-h"
+    },
+    {
+        id: 3,
+        title: "Отжимания на брусьях", \
+        englishTitle: "dips",
+        description: "Развитие нижней части грудных мышц и трицепса.",
+        muscleGroup: "Грудь",
+        category: "upper",
+        difficulty: "medium",
+        equipment: "Турник/брусья",
+        icon: "fas fa-people-arrows"
+    },
+    {
+        id: 4, \
+        title: "Жим гантелей на наклонной скамье",
+        englishTitle: "incline_dumbbell_press",
+        description: "Развитие верхней части грудных мышц.",
+        muscleGroup: "Грудь",
+        category: "upper",
+        difficulty: "medium",
+        equipment: "Гантели",
+        icon: "fas fa-angle-up"
+    },
+    {
+        id: 5, \
+        title: "Пуловер с гантелей",
+        englishTitle: "dumbbell_pullover",
+        description: "Развитие грудных и широчайших мышц.",
+        muscleGroup: "Грудь",
+        category: "upper",
+        difficulty: "medium",
+        equipment: "Гантели",
+        icon: "fas fa-arrow-circle-up"
+    },
+    {
+        id: 6,\
+        title: "Сведение рук в кроссовере",
+        englishTitle: "cable_crossovers",
+        description: "Изолирующее упражнение для грудных мышц.",
+        muscleGroup: "Грудь",
+        category: "upper",
+        difficulty: "medium",
+        equipment: "Тренажеры",
+        icon: "fas fa-compress-arrows-alt"
+    },
+    {
+        id: 7, \
+        title: "Жим штанги на наклонной скамье",
+        englishTitle: "incline_barbell_press",
+        description: "Развитие верхней части грудных мышц и плеч.",
+        muscleGroup: "Грудь",
+        category: "upper",
+        difficulty: "hard",
+        equipment: "Штанга",
+        icon: "fas fa-angle-up"
+    },
+    {
+        id: 8, \
+        title: "Отжимания от пола", \
+        englishTitle: "push_ups",
+        description: "Базовое упражнение для грудных мышц без оборудования.",
+        muscleGroup: "Грудь",
+        category: "upper",
+        difficulty: "easy",
+        equipment: "Без оборудования",
+        icon: "fas fa-hands"
+    },
+    {
+        id: 9,
+        title: "Жим гантелей на горизонтальной скамье",
+        englishTitle: "flat_dumbbell_press",
+        description: "Альтернатива штанге для развития грудных мышц.",
+        muscleGroup: "Грудь",
+        category: "upper",
+        difficulty: "medium",
+        equipment: "Гантели",
+        icon: "fas fa-weight-hanging"
+    },
+    {
+        id: 10,
+        title: "Отжимания с узкой постановкой рук", \
+        englishTitle: "close_grip_push_ups",
+        description: "Развитие внутренней части грудных мышц и трицепса.",
+        muscleGroup: "Грудь",
+        category: "upper",
+        difficulty: "medium",
+        equipment: "Без оборудования",
+        icon: "fas fa-hands"
+    },
+    {
+        id: 11,\
+        title: "Жим в тренажере Смита",
+        englishTitle: "smith_machine_press",
+        description: "Безопасный жим для грудных мышц, контроль амплитуды.",
+        muscleGroup: "Грудь",
+        category: "upper",
+        difficulty: "easy",
+        equipment: "Тренажеры",
+        icon: "fas fa-cogs"
+    },
+    {
+        id: 12,
+        title: "Отжимания с поднятыми ногами", \
+        englishTitle: "decline_push_ups",
+        description: "Упражнение для верхней части грудных мышц.",
+        muscleGroup: "Грудь",
+        category: "upper",
+        difficulty: "medium",
+        equipment: "Без оборудования",
+        icon: "fas fa-arrow-up"
+    },
+
+    // ================= СПИНА (13-26) =================
+    {
+        id: 13,\
+        title: "Тяга штанги в наклоне",
+        englishTitle: "barbell_bent_over_row",
+        description: "Базовое упражнение для толщины мышц спины.",
+        muscleGroup: "Спина",
+        category: "upper",
+        difficulty: "hard",
+        equipment: "Штанга",
+        icon: "fas fa-arrows-alt-v"
+    },
+    {
+        id: 14, \
+        title: "Тяга верхнего блока",
+        englishTitle: "lat_pulldown",
+        description: "Аналог подтягиваний для новичков, развивает широчайшие мышцы.",
+        muscleGroup: "Спина",
+        category: "upper",
+        difficulty: "easy",
+        equipment: "Тренажеры",
+        icon: "fas fa-arrow-down"
+    },
+    {
+        id: 15, \
+        title: "Тяга гантели одной рукой",
+        englishTitle: "single_arm_dumbbell_row",
+        description: "Развитие толщины спины и улучшение симметрии.",
+        muscleGroup: "Спина",
+        category: "upper",
+        difficulty: "medium",
+        equipment: "Гантели",
+        icon: "fas fa-hand-paper"
+    },
+    {
+        id: 16, \
+        title: "Становая тяга",
+        englishTitle: "deadlift",
+        description: "Базовое упражнение для спины, ног и всего тела.",
+        muscleGroup: "Спина",
+        category: "upper",
+        difficulty: "hard",
+        equipment: "Штанга",
+        icon: "fas fa-arrows-alt-v"
+    },
+    {
+        id: 17, \
+        title: "Тяга нижнего блока",
+        englishTitle: "seated_cable_row",
+        description: "Упражнение для толщины спины с тренажером.",
+        muscleGroup: "Спина",
+        category: "upper",
+        difficulty: "medium",
+        equipment: "Тренажеры",
+        icon: "fas fa-arrow-right"
+    },
+    {
+        id: 18, \
+        title: "Подтягивания обратным хватом", \
+        englishTitle: "reverse_grip_pull_ups",
+        description: "Акцент на нижнюю часть широчайших мышц спины.",
+        muscleGroup: "Спина",
+        category: "upper",
+        difficulty: "medium",
+        equipment: "Турник/брусья",
+        icon: "fas fa-retweet"
+    },
+    {
+        id: 19, \
+        title: "Гиперэкстензии",
+        englishTitle: "hyperextensions",
+        description: "Развитие нижней части спины и ягодиц.",
+        muscleGroup: "Спина",
+        category: "upper",
+        difficulty: "easy",
+        equipment: "Тренажеры",
+        icon: "fas fa-archway"
+    },
+    {
+        id: 20,
+        title: "Тяга к подбородку штанги",
+        englishTitle: "upright_barbell_row",
+        description: "Развитие трапециевидных и дельтовидных мышц.",
+        muscleGroup: "Спина",
+        category: "upper",
+        difficulty: "medium",
+        equipment: "Штанга",
+        icon: "fas fa-arrow-up"
+    },
+    {
+        id: 21, \
+        title: "Обратная гиперэкстензия",
+        englishTitle: "reverse_hyperextension",
+        description: "Развитие нижней части спины и ягодиц.",
+        muscleGroup: "Спина",
+        category: "upper",
+        difficulty: "medium",
+        equipment: "Тренажеры",
+        icon: "fas fa-exchange-alt"
+    },
+    {
+        id: 23, \
+        title: "Разведение рук с гантелями в наклоне",
+        englishTitle: "bent_over_dumbbell_flyes",
+        description: "Развитие задней дельты и верхней части спины.",
+        muscleGroup: "Спина",
+        category: "upper",
+        difficulty: "medium",
+        equipment: "Гантели",
+        icon: "fas fa-expand-alt"
+    },
+    {
+        id: 25,
+        title: "Подтягивания с весом",
+        englishTitle: "weighted_pull_ups",
+        description: "Усложнённое упражнение для спины с дополнительным весом.",
+        muscleGroup: "Спина",
+        category: "upper",
+        difficulty: "hard",
+        equipment: "Турник/брусья",
+        icon: "fas fa-weight-hanging"
+    },
+    {
+        id: 26, \
+        title: "Тяга верхнего блока обратным хватом",
+        englishTitle: "reverse_grip_lat_pulldown",
+        description: "Акцент на нижнюю часть широчайших мышц спины.",
+        muscleGroup: "Спина",
+        category: "upper",
+        difficulty: "medium",
+        equipment: "Тренажеры",
+        icon: "fas fa-retweet"
+    },
+
+    // ================= ПЛЕЧИ (27-40) =================
+    {
+        id: 27, \
+        title: "Жим штанги стоя",
+        englishTitle: "standing_barbell_press",
+        description: "Базовое упражнение для развития дельтовидных мышц плеч.",
+        muscleGroup: "Плечи",
+        category: "upper",
+        difficulty: "hard",
+        equipment: "Штанга",
+        icon: "fas fa-arrow-up"
+    },
+    {
+        id: 28, \\
+        title: "Махи гантелями в стороны",
+        englishTitle: "dumbbell_lateral_raises",
+        description: "Изолирующее упражнение для средних пучков дельтовидных мышц.",
+        muscleGroup: "Плечи",
+        category: "upper",
+        difficulty: "medium",
+        equipment: "Гантели",
+        icon: "fas fa-arrows-alt-h"
+    },
+    {
+        id: 29, \
+        title: "Махи гантелями вперед",
+        englishTitle: "front_dumbbell_raises",
+        description: "Развитие передних пучков дельтовидных мышц.",
+        muscleGroup: "Плечи",
+        category: "upper",
+        difficulty: "medium",
+        equipment: "Гантели",
+        icon: "fas fa-arrow-up"
+    },
+    {
+        id: 30, \
+        title: "Разведение рук на тренажере",
+        englishTitle: "machine_lateral_raises",
+        description: "Изолированная тренировка для средних пучков плеч.",
+        muscleGroup: "Плечи",
+        category: "upper",
+        difficulty: "easy",
+        equipment: "Тренажеры",
+        icon: "fas fa-cogs"
+    },
+    {
+        id: 31, \
+        title: "Арнольд жим",
+        englishTitle: "arnold_press",
+        description: "Комбинированное упражнение для всех пучков дельт.",
+        muscleGroup: "Плечи",
+        category: "upper",
+        difficulty: "medium",
+        equipment: "Гантели",
+        icon: "fas fa-sync-alt"
+    },
+    {
+        id: 32, \
+        title: "Жим гантелей сидя",
+        englishTitle: "seated_dumbbell_press",
+        description: "Базовое упражнение для плеч, упор на передний пучок.",
+        muscleGroup: "Плечи",
+        category: "upper",
+        difficulty: "medium",
+        equipment: "Гантели",
+        icon: "fas fa-chair"
+    },
+
+    {
+        id: 34, \
+        title: "Жим штанги сидя",
+        englishTitle: "seated_barbell_press",
+        description: "Силовое упражнение для переднего пучка дельтовидной мышцы.",
+        muscleGroup: "Плечи",
+        category: "upper",
+        difficulty: "hard",
+        equipment: "Штанга",
+        icon: "fas fa-chair"
+    },
+    {
+        id: 35, \
+        title: "Подъем гантелей перед собой сидя",
+        englishTitle: "seated_front_raises",
+        description: "Развитие передней дельты без участия ног.",
+        muscleGroup: "Плечи",
+        category: "upper",
+        difficulty: "medium",
+        equipment: "Гантели",
+        icon: "fas fa-arrow-up"
+    },
+    {
+        id: 36, \\
+        title: "Жим гантелей стоя",
+        englishTitle: "standing_dumbbell_press",
+        description: "Комбинированное упражнение для всех пучков дельт.",
+        muscleGroup: "Плечи",
+        category: "upper",
+        difficulty: "medium",
+        equipment: "Гантели",
+        icon: "fas fa-arrows-alt-v"
+    },
+    {
+        id: 37,
+        title: "Махи гантелей в стороны сидя",
+        englishTitle: "seated_lateral_raises",
+        description: "Изолированное упражнение для средних дельт.",
+        muscleGroup: "Плечи",
+        category: "upper",
+        difficulty: "medium",
+        equipment: "Гантели",
+        icon: "fas fa-chair"
+    },
+
+    {
+        id: 39, \
+        title: "Отжимания в стойке на руках у стены",
+        englishTitle: "handstand_push_ups",
+        description: "Для передних и средних дельт",
+        muscleGroup: "Плечи",
+        category: "upper",
+        difficulty: "hard",
+        equipment: "Без оборудования",
+        icon: "fas fa-arrow-up"
+    },
+    {
+        id: 40,
+        title: "Подтягивания за голову", \
+        englishTitle: "behind_the_neck_pull_ups",
+        description: "Для задних дельт и трапеций",
+        muscleGroup: "Плечи",
+        category: "upper",
+        difficulty: "hard",
+        equipment: "Турник/брусья",
+        icon: "fas fa-heading"
+    },
+
+    // ================= БИЦЕПС (41-50) =================
+    {
+        id: 41, \
+        title: "Подъем штанги на бицепс",
+        englishTitle: "barbell_bicep_curl",
+        description: "Классическое упражнение для развития бицепса.",
+        muscleGroup: "Бицепс",
+        category: "upper",
+        difficulty: "easy",
+        equipment: "Штанга",
+        icon: "fas fa-arrow-up"
+    },
+    {
+        id: 42, 
+        title: "Подъем гантелей на бицепс",
+        englishTitle: "dumbbell_bicep_curl",
+        description: "Изолированное упражнение для бицепса.",
+        muscleGroup: "Бицепс",
+        category: "upper",
+        difficulty: "medium",
+        equipment: "Гантели",
+        icon: "fas fa-hand-rock"
+    },
+    {
+        id: 43,
+        title: "Молотковые сгибания",
+        englishTitle: "hammer_curl",
+        description: "Развитие бицепса и предплечий.",
+        muscleGroup: "Бицепс",
+        category: "upper",
+        difficulty: "medium",
+        equipment: "Гантели",
+        icon: "fas fa-hammer"
+    },
+    {
+        id: 44, \
+        title: "Концентрированные сгибания",
+        englishTitle: "concentration_curl",
+        description: "Изолированное упражнение для пика бицепса.",
+        muscleGroup: "Бицепс",
+        category: "upper",
+        difficulty: "medium",
+        equipment: "Гантели",
+        icon: "fas fa-bullseye"
+    },
+    {
+        id: 46, \
+        title: "Сгибания штанги обратным хватом",
+        englishTitle: "reverse_grip_barbell_curl",
+        description: "Упражнение для бицепсов и предплечий.",
+        muscleGroup: "Бицепс",
+        category: "upper",
+        difficulty: "medium",
+        equipment: "Штанга",
+        icon: "fas fa-retweet"
+    },
+    {
+        id: 47,
+        title: "Кабельные сгибания",
+        englishTitle: "cable_bicep_curl",
+        description: "Изолированное упражнение для бицепса с постоянным сопротивлением.",
+        muscleGroup: "Бицепс",
+        category: "upper",
+        difficulty: "medium",
+        equipment: "Тренажеры",
+        icon: "fas fa-compress-alt"
+    },
+    {
+        id: 48,
+        title: "Сгибания с эспандером",
+        englishTitle: "resistance_band_curl",
+        description: "Изолированная тренировка для бицепсов с резинкой.",
+        muscleGroup: "Бицепс",
+        category: "upper",
+        difficulty: "easy",
+        equipment: "Эспандеры",
+        icon: "fas fa-expand-alt"
+    },
+    {
+        id: 49, \
+        title: "Сгибания с гантелями на скамье Скотта",
+        englishTitle: "scott_bench_curl",
+        description: "Изолированное упражнение для пика бицепса.",
+        muscleGroup: "Бицепс",
+        category: "upper",
+        difficulty: "medium",
+        equipment: "Гантели",
+        icon: "fas fa-arrow-up"
+    },
+    {
+        id: 50,
+        title: "Австралийские подтягивания обратным хватом",
+        englishTitle: "australian_pull_ups",
+        description: "Упрощенные подтягивания для бицепса",
+        muscleGroup: "Бицепс",
+        category: "upper",
+        difficulty: "easy",
+        equipment: "Турник/брусья",
+        icon: "fas fa-angle-up"
+    },
+
+    // ================= ТРИЦЕПС (51-60) =================
+    {
+        id: 51,
+        title: "Французский жим лежа",
+        englishTitle: "lying_triceps_extension",
+        description: "Изолирующее упражнение для трицепса со штангой.",
+        muscleGroup: "Трицепс",
+        category: "upper",
+        difficulty: "medium",
+        equipment: "Штанга",
+        icon: "fas fa-bed"
+    },
+    {
+        id: 52, \
+        title: "Разгибания рук на блоке",
+        englishTitle: "triceps_pushdown",
+        description: "Изолированная тренировка трицепса с постоянным сопротивлением.",
+        muscleGroup: "Трицепс",
+        category: "upper",
+        difficulty: "medium",
+        equipment: "Тренажеры",
+        icon: "fas fa-arrow-down"
+    },
+
+    {
+        id: 54, \
+        title: "Разгибания рук с гантелей над головой",
+        englishTitle: "overhead_triceps_extension",
+        description: "Изолированное упражнение для длинной головки трицепса.",
+        muscleGroup: "Трицепс",
+        category: "upper",
+        difficulty: "medium",
+        equipment: "Гантели",
+        icon: "fas fa-arrow-up"
+    },
+
+    {
+        id: 56,
+        title: "Разгибания рук в наклоне",
+        englishTitle: "bent_over_triceps_extension",
+        description: "Изолированное упражнение для трицепса с гантелями.",
+        muscleGroup: "Трицепс",
+        category: "upper",
+        difficulty: "medium",
+        equipment: "Гантели",
+        icon: "fas fa-angle-down"
+    },
+    {
+        id: 57,
+        title: "Обратные отжимания на скамье",
+        englishTitle: "bench_dips",
+        description: "Простое упражнение для трицепса без тренажеров.",
+        muscleGroup: "Трицепс",
+        category: "upper",
+        difficulty: "easy",
+        equipment: "Без оборудования",
+        icon: "fas fa-chair"
+    },
+    {
+        id: 58,
+        title: "Отжимания на брусьях с вертикальным корпусом",
+        englishTitle: "vertical_dips",
+        description: "Акцент на трицепс, локти прижаты к корпусу",
+        muscleGroup: "Трицепс",
+        category: "upper",
+        difficulty: "medium",
+        equipment: "Турник/брусья",
+        icon: "fas fa-people-arrows"
+    },
+
+    // ================= ПРЕСС (61-74) =================
+    {
+        id: 61, \
+        title: "Скручивания на пресс",
+        englishTitle: "crunches",
+        description: "Базовое упражнение для прямой мышцы живота.",
+        muscleGroup: "Пресс",
+        category: "core",
+        difficulty: "easy",
+        equipment: "Без оборудования",
+        icon: "fas fa-sync-alt"
+    },
+    {
+        id: 62, \\\
+        title: "Планка",
+        englishTitle: "plank",
+        description: "Статическое упражнение для укрепления мышц кора.",
+        muscleGroup: "Пресс",
+        category: "core",
+        difficulty: "medium",
+        equipment: "Без оборудования",
+        icon: "fas fa-square"
+    },
+    {
+        id: 64, \
+        title: "Русские скручивания",
+        englishTitle: "russian_twists",
+        description: "Упражнение для косых мышц живота.",
+        muscleGroup: "Пресс",
+        category: "core",
+        difficulty: "medium",
+        equipment: "Без оборудования",
+        icon: "fas fa-exchange-alt"
+    },
+    {
+        id: 65,
+        title: "Велосипед",
+        englishTitle: "bicycle_crunches",
+        description: "Упражнение для косых мышц живота и нижнего пресса.",
+        muscleGroup: "Пресс",
+        category: "core",
+        difficulty: "medium",
+        equipment: "Без оборудования",
+        icon: "fas fa-bicycle"
+    },
+    {
+        id: 66,
+        title: "Подъем туловища на наклонной скамье",
+        englishTitle: "decline_sit_ups",
+        description: "Усложнённое упражнение для прямой мышцы живота.",
+        muscleGroup: "Пресс",
+        category: "core",
+        difficulty: "medium",
+        equipment: "Тренажеры",
+        icon: "fas fa-angle-up"
+    },
+    {
+        id: 67, \
+        title: "Боковая планка",
+        englishTitle: "side_plank",
+        description: "Изолированная тренировка косых мышц живота.",
+        muscleGroup: "Пресс",
+        category: "core",
+        difficulty: "medium",
+        equipment: "Без оборудования",
+        icon: "fas fa-arrow-right"
+    },
+    {
+        id: 68,
+        title: "Обратные скручивания",
+        englishTitle: "reverse_crunches",
+        description: "Упражнение для нижнего пресса.",
+        muscleGroup: "Пресс",
+        category: "core",
+        difficulty: "medium",
+        equipment: "Без оборудования",
+        icon: "fas fa-retweet"
+    },
+    {
+        id: 69, \
+        title: "Подъем ног лежа",
+        englishTitle: "lying_leg_raises",
+        description: "Упражнение для нижней части пресса.",
+        muscleGroup: "Пресс",
+        category: "core",
+        difficulty: "medium",
+        equipment: "Без оборудования",
+        icon: "fas fa-bed"
+    },
+    {
+        id: 70,
+        title: "Планка с поднятой ногой",
+        englishTitle: "plank_with_leg_lift",
+        description: "Усложнённая статическая нагрузка на мышцы кора.",
+        muscleGroup: "Пресс",
+        category: "core",
+        difficulty: "hard",
+        equipment: "Без оборудования",
+        icon: "fas fa-walking"
+    },
+    {
+        id: 71,
+        title: "Подъем прямых ног в висе",\
+        englishTitle: "hanging_straight_leg_raises",
+        description: "Для нижнего пресса",
+        muscleGroup: "Пресс",
+        category: "core",
+        difficulty: "hard",
+        equipment: "Турник/брусья",
+        icon: "fas fa-arrow-up"
+    },
+    {
+        id: 72,
+        title: "Велосипед в висе",
+        englishTitle: "hanging_bicycle",
+        description: "Для косых мышц и всего пресса",
+        muscleGroup: "Пресс",
+        category: "core",
+        difficulty: "hard",
+        equipment: "Турник/брусья",
+        icon: "fas fa-bicycle"
+    },
+    {
+        id: 74,
+        title: "Подъем колен в висе",
+        englishTitle: "hanging_knee_raises_alt",
+        description: "Упражнение для нижнего пресса и кора.",
+        muscleGroup: "Пресс",
+        category: "core",
+        difficulty: "medium",
+        equipment: "Турник/брусья",
+        icon: "fas fa-arrow-up"
+    },
+
+    // ================= НОГИ (75-92) =================
+    {
+        id: 75, \
+        title: "Приседания со штангой",
+        englishTitle: "barbell_squats",
+        description: "Король всех упражнений для развития ног и ягодиц.",
+        muscleGroup: "Ноги",
+        category: "lower",
+        difficulty: "hard",
+        equipment: "Штанга",
+        icon: "fas fa-arrows-alt-v"
+    },
+    {
+        id: 76, \\\
+        title: "Выпады с гантелями",
+        englishTitle: "dumbbell_lunges",
+        description: "Упражнение для ног и ягодиц с акцентом на баланс.",
+        muscleGroup: "Ноги",
+        category: "lower",
+        difficulty: "medium",
+        equipment: "Гантели",
+        icon: "fas fa-football-ball"
+    },
+    {
+        id: 77,
+        title: "Сгибания ног лежа",
+        englishTitle: "lying_leg_curls",
+        description: "Изолирующее упражнение для бицепса бедра.",
+        muscleGroup: "Ноги",
+        category: "lower",
+        difficulty: "easy",
+        equipment: "Тренажеры",
+        icon: "fas fa-bed"
+    },
+    {
+        id: 78,
+        title: "Разгибания ног сидя",
+        englishTitle: "leg_extensions",
+        description: "Изолированное упражнение для квадрицепсов.",
+        muscleGroup: "Ноги",
+        category: "lower",
+        difficulty: "easy",
+        equipment: "Тренажеры",
+        icon: "fas fa-chair"
+    },
+    {
+        id: 80,
+        title: "Приседания с гантелями",
+        englishTitle: "goblet_squats",
+        description: "Базовое упражнение для ног без штанги.",
+        muscleGroup: "Ноги",
+        category: "lower",
+        difficulty: "medium",
+        equipment: "Гантели",
+        icon: "fas fa-weight-hanging"
+    },
+    {
+        id: 81, \
+        title: "Болгарские выпады",
+        englishTitle: "bulgarian_split_squats",
+        description: "Упражнение на одну ногу для ног и ягодиц.",
+        muscleGroup: "Ноги",
+        category: "lower",
+        difficulty: "hard",
+        equipment: "Гантели",
+        icon: "fas fa-balance-scale"
+    },
+    {
+        id: 82,
+        title: "Сумо-приседания с гантелей",
+        englishTitle: "sumo_squats",
+        description: "Упражнение для внутренней части бедер и ягодиц.",
+        muscleGroup: "Ноги",
+        category: "lower",
+        difficulty: "medium",
+        equipment: "Гантели",
+        icon: "fas fa-arrows-alt-h"
+    },
+    {
+        id: 83, \
+        title: "Мертвая тяга на прямых ногах",
+        englishTitle: "stiff_leg_deadlift",
+        description: "Упражнение для задней поверхности бедра и ягодиц.",
+        muscleGroup: "Ноги",
+        category: "lower",
+        difficulty: "hard",
+        equipment: "Штанга",
+        icon: "fas fa-arrows-alt-v"
+    },
+    {
+        id: 84,
+        title: "Ягодичный мостик",
+        englishTitle: "glute_bridge",
+        description: "Изолированное упражнение для ягодиц.",
+        muscleGroup: "Ноги",
+        category: "lower",
+        difficulty: "easy",
+        equipment: "Без оборудования",
+        icon: "fas fa-archway"
+    },
+    {
+        id: 85,
+        title: "Ходьба с выпадами",
+        englishTitle: "walking_lunges",
+        description: "Динамическая тренировка ног и ягодиц.",
+        muscleGroup: "Ноги",
+        category: "lower",
+        difficulty: "medium",
+        equipment: "Без оборудования",
+        icon: "fas fa-walking"
+    },
+    {
+        id: 87,
+        title: "Сгибания ног сидя",
+        englishTitle: "seated_leg_curls",
+        description: "Изолированное упражнение для задней поверхности бедра.",
+        muscleGroup: "Ноги",
+        category: "lower",
+        difficulty: "medium",
+        equipment: "Тренажеры",
+        icon: "fas fa-chair"
+    },
+    {
+        id: 89,
+        title: "Прыжки на месте",
+        englishTitle: "jumping_jacks",
+        description: "Кардио и укрепление ног.",
+        muscleGroup: "Ноги",
+        category: "lower",
+        difficulty: "easy",
+        equipment: "Без оборудования",
+        icon: "fas fa-arrow-up"
+    },
+    {
+        id: 90,
+        title: "Прыжки на скакалке",
+        englishTitle: "jump_rope",
+        description: "Кардио и развитие выносливости.",
+        muscleGroup: "Ноги",
+        category: "lower",
+        difficulty: "medium",
+        equipment: "Без оборудования",
+        icon: "fas fa-undo-alt"
+    },
+    {
+        id: 91,
+        title: "Боковые выпады",
+        englishTitle: "side_lunges",
+        description: "Укрепление ног, ягодиц и баланса.",
+        muscleGroup: "Ноги",
+        category: "lower",
+        difficulty: "medium",
+        equipment: "Без оборудования",
+        icon: "fas fa-arrows-alt-h"
+    },
+    {
+        id: 92,
+        title: "Приседания с прыжком",
+        englishTitle: "jump_squats",
+        description: "Взрывное упражнение для ног и ягодиц.",
+        muscleGroup: "Ноги",
+        category: "lower",
+        difficulty: "hard",
+        equipment: "Без оборудования",
+        icon: "fas fa-rocket"
+    },
+
+    // ================= ШЕЯ (93-97) =================
+    {
+        id: 93,
+        title: "Шраги со штангой",
+        englishTitle: "barbell_shrugs",
+        description: "Упражнение для трапециевидных мышц и шеи.",
+        muscleGroup: "Шея",
+        category: "head",
+        difficulty: "medium",
+        equipment: "Штанга",
+        icon: "fas fa-arrow-up"
+    },
+    {
+        id: 94, \
+        title: "Шраги с гантелями",
+        englishTitle: "dumbbell_shrugs",
+        description: "Изолированная тренировка трапеции и шеи.",
+        muscleGroup: "Шея",
+        category: "head",
+        difficulty: "medium",
+        equipment: "Гантели",
+        icon: "fas fa-hand-paper"
+    },
+    {
+        id: 95,
+        title: "Подъем головы лежа",
+        englishTitle: "lying_head_raises",
+        description: "Изолированное упражнение для передней части шеи.",
+        muscleGroup: "Шея",
+        category: "head",
+        difficulty: "easy",
+        equipment: "Без оборудования",
+        icon: "fas fa-bed"
+    },
+    {
+        id: 96,
+        title: "Разгибания шеи на тренажере",
+        englishTitle: "machine_neck_extension",
+        description: "Упражнение для задней части шеи и трапеций.",
+        muscleGroup: "Шея",
+        category: "head",
+        difficulty: "medium",
+        equipment: "Тренажеры",
+        icon: "fas fa-cogs"
+    },
+    {
+        id: 97,
+        title: "Боковые наклоны головы с гантелью",
+        englishTitle: "lateral_neck_flexion",
+        description: "Упражнение для боковой шеи и трапеций.",
+        muscleGroup: "Шея",
+        category: "head",
+        difficulty: "medium",
+        equipment: "Гантели",
+        icon: "fas fa-arrow-right"
+    },
+
+    // ================= ПРЕДПЛЕЧЬЯ (98-106) =================
+    {
+        id: 98,
+        title: "Сгибания запястий со штангой",
+        englishTitle: "barbell_wrist_curl",
+        description: "Изолированное упражнение для сгибателей предплечья.",
+        muscleGroup: "Предплечья",
+        category: "upper",
+        difficulty: "medium",
+        equipment: "Штанга",
+        icon: "fas fa-hand-point-up"
+    },
+    {
+        id: 99,
+        title: "Обратные сгибания запястий со штангой",
+        englishTitle: "reverse_wrist_curl",
+        description: "Упражнение для разгибателей предплечья.",
+        muscleGroup: "Предплечья",
+        category: "upper",
+        difficulty: "medium",
+        equipment: "Штанга",
+        icon: "fas fa-hand-point-down"
+    },
+    {
+        id: 100, \
+        title: "Сгибания молотковым хватом",
+        englishTitle: "hammer_curl_forearms",
+        description: "Упражнение для брахиалиса и предплечий.",
+        muscleGroup: "Предплечья",
+        category: "upper",
+        difficulty: "medium",
+        equipment: "Гантели",
+        icon: "fas fa-hammer"
+    },
+    {
+        id: 101, \
+        title: "Захват с гирей",
+        englishTitle: "kettlebell_grip",
+        description: "Статическое упражнение для силы хвата и предплечий.",
+        muscleGroup: "Предплечья",
+        category: "upper",
+        difficulty: "medium",
+        equipment: "Гири",
+        icon: "fas fa-weight"
+    },
+    {
+        id: 102, \
+        title: "Вращение кистей с гантелью",
+        englishTitle: "wrist_rotation",
+        description: "Изолированная тренировка предплечий.",
+        muscleGroup: "Предплечья",
+        category: "upper",
+        difficulty: "easy",
+        equipment: "Гантели",
+        icon: "fas fa-sync-alt"
+    },
+    {
+        id: 103, \
+        title: "Фермерская прогулка",
+        englishTitle: "farmers_walk",
+        description: "Развитие хвата и предплечий, а также кора.",
+        muscleGroup: "Предплечья",
+        category: "upper",
+        difficulty: "medium",
+        equipment: "Гантели",
+        icon: "fas fa-walking"
+    },
+    {
+        id: 104, \
+        title: "Захват на турнике",
+        englishTitle: "bar_hang",
+        description: "Статическое упражнение для силы хвата и предплечий.",
+        muscleGroup: "Предплечья",
+        category: "upper",
+        difficulty: "hard",
+        equipment: "Турник/брусья",
+        icon: "fas fa-hands"
+    },
+    {
+        id: 105, \
+        title: "Сгибания пальцев с эспандером",
+        englishTitle: "finger_curls",
+        description: "Укрепление кистей и предплечий с резиновым эспандером.",
+        muscleGroup: "Предплечья",
+        category: "upper",
+        difficulty: "easy",
+        equipment: "Эспандеры",
+        icon: "fas fa-hand-rock"
+    },
+    {
+        id: 106, \
+        title: "Фермерская прогулка с гирями",
+        englishTitle: "kettlebell_farmers_walk",
+        description: "Упражнение для хвата, предплечий и кора.",
+        muscleGroup: "Предплечья",
+        category: "upper",
+        difficulty: "medium",
+        equipment: "Гири",
+        icon: "fas fa-walking"
+    },
+
+    // ================= РАЗНЫЕ УПРАЖНЕНИЯ (107-120) =================
+    {
+        id: 107, \
+        title: "Берпи",
+        englishTitle: "burpees",
+        description: "Комплексное упражнение для всего тела и кардио.",
+        muscleGroup: "Разное",
+        category: "fullbody",
+        difficulty: "hard",
+        equipment: "Без оборудования",
+        icon: "fas fa-running"
+    },
+    {
+        id: 108, \
+        title: "Скалолаз",
+        englishTitle: "mountain_climbers",
+        description: "Упражнение для кора, плеч и ног.",
+        muscleGroup: "Разное",
+        category: "core",
+        difficulty: "medium",
+        equipment: "Без оборудования",
+        icon: "fas fa-mountain"
+    },
+    {
+        id: 109, \
+        title: "Планка с касанием плеч",
+        englishTitle: "plank_shoulder_taps",
+        description: "Упражнение для кора и плечевой стабилизации.",
+        muscleGroup: "Разное",
+        category: "core",
+        difficulty: "medium",
+        equipment: "Без оборудования",
+        icon: "fas fa-hands"
+    },
+    {
+        id: 110, \
+        title: "Выпрыгивания на платформу",
+        englishTitle: "box_jumps",
+        description: "Взрывная нагрузка для ног и ягодиц.",
+        muscleGroup: "Разное",
+        category: "lower",
+        difficulty: "hard",
+        equipment: "Без оборудования",
+        icon: "fas fa-arrow-up"
+    },
+    {
+        id: 111, \
+        title: "Бёрпи с отжиманием",
+        englishTitle: "burpee_with_push_up",
+        description: "Интенсивное кардио и силовое упражнение.",
+        muscleGroup: "Разное",
+        category: "fullbody",
+        difficulty: "hard",
+        equipment: "Без оборудования",
+        icon: "fas fa-fire"
+    },
+    {
+        id: 113, \
+        title: "Бег на месте с высоким коленом",
+        englishTitle: "high_knees",
+        description: "Кардио и укрепление ног.",
+        muscleGroup: "Разное",
+        category: "lower",
+        difficulty: "medium",
+        equipment: "Без оборудования",
+        icon: "fas fa-running"
+    },
+    {
+        id: 114, \
+        title: "Скручивания с поднятыми ногами",
+        englishTitle: "leg_raises_crunches",
+        description: "Сложное упражнение для пресса.",
+        muscleGroup: "Разное",
+        category: "core",
+        difficulty: "hard",
+        equipment: "Без оборудования",
+        icon: "fas fa-arrow-up"
+    },
+    {
+        id: 115,
+        title: "Отжимания на одной руке", \
+        englishTitle: "one_arm_push_ups",
+        description: "Сложное упражнение для груди, трицепса и плеч.",
+        muscleGroup: "Разное",
+        category: "upper",
+        difficulty: "hard",
+        equipment: "Без оборудования",
+        icon: "fas fa-hand-paper"
+    },
+    {
+        id: 116, \
+        title: "Тяга горизонтального блока",
+        englishTitle: "horizontal_cable_row",
+        description: "Упражнение для спины и бицепса.",
+        muscleGroup: "Спина",
+        category: "upper",
+        difficulty: "medium",
+        equipment: "Тренажеры",
+        icon: "fas fa-arrow-right"
+    },
+    {
+        id: 117,
+        title: "Тяга гантели к поясу одной рукой", \
+        englishTitle: "single_arm_dumbbell_row_alt",
+        description: "Изолированное упражнение для толщины спины.",
+        muscleGroup: "Спина",
+        category: "upper",
+        difficulty: "medium",
+        equipment: "Гантели",
+        icon: "fas fa-hand-paper"
+    },
+    {
+        id: 118,
+        title: "Подъем на носки с гантелями", \
+        englishTitle: "dumbbell_calf_raises",
+        description: "Развитие икроножных мышц.",
+        muscleGroup: "Ноги",
+        category: "lower",
+        difficulty: "medium",
+        equipment: "Гантели",
+        icon: "fas fa-arrow-up"
+    },
+    {
+        id: 119,
+        title: "Подтягивания широким хватом", \
+        englishTitle: "wide_grip_pull_ups",
+        description: "Базовое упражнение для спины и бицепса.",
+        muscleGroup: "Спина",
+        category: "upper",
+        difficulty: "hard",
+        equipment: "Турник/брусья",
+        icon: "fas fa-arrows-alt-h"
+    },
+    {
+        id: 120,
+        title: "Выход силой на две руки", \
+        englishTitle: "muscle_up",
+        description: "Для взрывной силы и координации",
+        muscleGroup: "Разное",
+        category: "upper",
+        difficulty: "hard",
+        equipment: "Турник/брусья",
+        icon: "fas fa-rocket"
+    }
+];
+
+// Добавьте в конец exercises.js
+window.exercisesData = exercisesData;

@@ -1,0 +1,191 @@
+
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>База продуктов | FitGy</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="../css/nutrition.css">
+</head>
+<body>
+
+<header class="header">
+        <div class="container">
+            <nav class="nav">
+                <ul class="nav-list">
+                    <li class="nav-logo">
+                        <a href="../index.html">
+                            <img src="../img/logo/logo.png" alt="Логотип FitGy">
+                        </a>
+                    </li>
+
+                    <ul class="nav-center">
+                        <li><a href="body.html">3D-Модель</a></li>
+                        <li><a href="training.html">Тренировки</a></li>
+                        <li><a href="food.html">Питание</a></li>
+                        <li><a href="equip.html">Экипировка</a></li>
+                        <li><a href="place.html">Места тренировок</a></li>
+                    </ul>
+
+                    <li class="nav-auth">
+                    <a href="login.html" id="auth-icon" class="auth-icon-hidden">
+                        <img src="../img/logo/auth.png" alt="Авторизация">
+                    </a>
+                    <a href="profile.html" id="profile-icon" class="auth-icon-hidden">
+                        <img src="../img/logo/profile.png" alt="Профиль">
+                    </a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+<section class="products-hero">
+    <div class="container">
+            <div class="page-header">
+            <h1 class="page-title">База продуктов питания</h1>
+            <p class="page-description">Найдите информацию о пищевой ценности более 1000 продуктов. Указывайте белки, жиры, углеводы и калории на 100 грамм</p>
+            </div>
+    </div>
+</section>
+
+<section class="products-search">
+    <div class="container">
+        <div class="search-container">
+            <div class="search-box">
+                <i class="fas fa-search"></i>
+                <input type="text" id="searchInput" placeholder="Поиск продуктов (яблоко, курица, рис...)">
+                <button id="clearSearch" class="clear-btn">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            
+            <div class="filters">
+                <div class="category-filter">
+                    <h3>Категории:</h3>
+                    <div class="category-buttons" id="categoryFilter">
+                        <!-- Категории будут загружены через JavaScript -->
+                    </div>
+                </div>
+            </div>
+            
+            <div class="search-info">
+                <span id="productCount">Всего продуктов: 0</span>
+                <div class="active-filters" id="activeFilters"></div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Products Section -->
+<section class="products-main">
+    <div class="container">
+        <div class="products-header">
+            <h2>Список продуктов</h2>
+            <div class="sort-options">
+                <button class="sort-btn active" data-sort="name">По названию</button>
+                <button class="sort-btn" data-sort="calories">По калориям</button>
+                <button class="sort-btn" data-sort="proteins">По белкам</button>
+                <button class="sort-btn" data-sort="fats">По жирам</button>
+                <button class="sort-btn" data-sort="carbs">По углеводам</button>
+            </div>
+        </div>
+
+        <div class="products-grid" id="productsContainer">
+            <!-- Продукты будут загружены через JavaScript -->
+        </div>
+
+        <div class="no-results hidden" id="noResults">
+            <i class="fas fa-search"></i>
+            <h3>Продукты не найдены</h3>
+            <p>Попробуйте изменить поисковый запрос или выбрать другую категорию</p>
+        </div>
+        
+        <div class="pagination" id="pagination">
+            <!-- Пагинация будет добавлена через JavaScript -->
+        </div>
+    </div>
+</section>
+
+<!-- Nutrition Info -->
+<section class="nutrition-info">
+    <div class="container">
+        <h2>Что означают эти показатели?</h2>
+        <div class="info-cards">
+            <div class="info-card">
+                <div class="info-icon protein">
+                    <i class="fas fa-dumbbell"></i>
+                </div>
+                <h3>Белки</h3>
+                <p>Строительный материал для мышц. Важны для роста и восстановления тканей.</p>
+            </div>
+            <div class="info-card">
+                <div class="info-icon fat">
+                    <i class="fas fa-oil-can"></i>
+                </div>
+                <h3>Жиры</h3>
+                <p>Источник энергии, участвуют в усвоении витаминов и гормональном балансе.</p>
+            </div>
+            <div class="info-card">
+                <div class="info-icon carb">
+                    <i class="fas fa-bread-slice"></i>
+                </div>
+                <h3>Углеводы</h3>
+                <p>Основной источник энергии для организма, особенно для мозга и мышц.</p>
+            </div>
+            <div class="info-card">
+                <div class="info-icon calorie">
+                    <i class="fas fa-fire"></i>
+                </div>
+                <h3>Калории</h3>
+                <p>Общая энергетическая ценность продукта. 1 ккал = 1000 калорий.</p>
+            </div>
+        </div>
+    </div>
+</section>
+<footer class="footer">
+        <div class="container-footer">
+            <div class="footer-content">
+                <div class="footer-links">
+                    <h4>Разделы</h4>
+                    <a href="body.html">3D-Модель</a>
+                    <a href="training.html">Тренировки</a>
+                    <a href="place.html">Места посещения</a>
+                </div>
+                <div class="footer-links">
+                    <h4>Ресурсы</h4>
+                    <a href="food.html">Питание</a>
+                    <a href="equip.html">Экипировка</a>
+                    <a href="docs.html">Документация</a>
+                </div>
+                <div class="footer-links footer-contacts">
+                <h4>Контакты</h4>
+                <div class="contacts-container">
+                    <a href="https://vk.com/FIT_GY" target="_blank" class="contact-link">
+                        <i class="contact-icon fab fa-vk"></i>
+                        <span>ВКонтакте</span>
+                    </a>
+                    <a href="https://t.me/FIT_GY" target="_blank" class="contact-link">
+                        <i class="contact-icon fab fa-telegram"></i>
+                        <span>Telegram</span>
+                    </a>
+                    <a href="mailto:fitngy@gmail.com?subject=Вопрос&body=Здравствуйте!" class="contact-link">
+                        <span>Написать писмьо</span>
+                    </a>
+                </div>
+            </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 FitGy. Все права защищены.</p>
+            </div>
+        </div>
+    </footer>
+<script type="module" src="../js/auth-state.js"></script>
+<script src="../js/nutrition.js"></script>
+</body>
+</html>

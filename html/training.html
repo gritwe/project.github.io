@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FitGy - Тренировки и теория</title>
+    <link rel="stylesheet" href="../css/training.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <nav class="nav">
+                <ul class="nav-list">
+                    <li class="nav-logo">
+                        <a href="../index.html">
+                            <img src="../img/logo/logo.png" alt="Логотип FitGy">
+                        </a>
+                    </li>
+
+                    <ul class="nav-center">
+                        <li><a class="" href="body.html">3D-Модель</a></li>
+                        <li><a class="active" href="training.html">Тренировки</a></li>
+                        <li><a href="food.html">Питание</a></li>
+                        <li><a href="equip.html">Экипировка</a></li>
+                        <li><a href="place.html">Места тренировок</a></li>
+                    </ul>
+
+                    <li class="nav-auth">
+                    <a href="login.html" id="auth-icon" class="auth-icon-hidden">
+                        <img src="../img/logo/auth.png" alt="Авторизация">
+                    </a>
+                    <a href="profile.html" id="profile-icon" class="auth-icon-hidden">
+                        <img src="../img/logo/profile.png" alt="Профиль">
+                    </a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="main">
+        <section class="features">
+            <div class="container">
+                <div class="page-header">
+                <h1 class="page-title">Практические инструменты</h1>
+                <p class="page-description">Всё необходимое для эффективных тренировок</p>
+                </div>
+                <div class="features-grid">
+                    <a href="muscle-exercises.html" class="feature-card">
+                        <div class="card-icon">
+                            <i class="fas fa-dumbbell"></i>
+                        </div>
+                        <h3 class="card-title">Упражнения на мышцы</h3>
+                        <p class="card-description">Библиотека упражнений с подробным описанием техники выполнения для каждой группы мышц</p>
+                        <div class="card-footer">
+                            <span class="card-link">Изучить упражнения <i class="fas fa-arrow-right"></i></span>
+                        </div>
+                    </a>
+                    <a href="theory_fit" class="feature-card" id="theory-card">
+                        <div class="card-icon">
+                            <i class="fas fa-book"></i>
+                        </div>
+                        <h3 class="card-title">Изучите теорию</h3>
+                        <p class="card-description">Теоретические знания — основа эффективных тренировок. Они помогут вам понять, как работает ваше тело, как правильно строить программу и почему выбранные упражнения приводят к результату.</p>
+                        <div class="card-footer">
+                            <span class="card-link">Изучить теорию <i class="fas fa-arrow-right"></i></span>
+                        </div>
+                    </a>
+                    <a href="create-workout.html" class="feature-card">
+                        <div class="card-icon">
+                            <i class="fas fa-plus-circle"></i>
+                        </div>
+                        <h3 class="card-title">Составить тренировку</h3>
+                        <p class="card-description">Создай индивидуальную программу тренировок под свои цели и уровень подготовки</p>
+                        <div class="card-footer">
+                            <span class="card-link">Создать программу <i class="fas fa-arrow-right"></i></span>
+                        </div>
+                    </a>
+
+                </div>
+            </div>
+        </section>
+        
+        <section class="hero">
+            <div class="container">
+                <h1 class="hero-title">Фитнес-образование с FitGy</h1>
+                <p class="hero-subtitle">Изучай теорию, применяй на практике, достигай результатов</p>
+                <div class="progress-container">
+                    <div class="progress-label">
+                        <span>Ваш прогресс обучения: <strong id="progress-percent">0%</strong></span>
+                        <span id="progress-count">0/3 тем</span>
+                    </div>
+                    <div class="progress-bar">
+                        <div class="progress-fill" id="progress-fill"></div>
+                    </div>
+                    <p class="progress-note" id="progress-note">Авторизуйтесь, чтобы сохранять прогресс</p>
+                    <!-- Кнопка сброса прогресса по центру -->
+                    <div class="reset-button-container">
+                        <button id="reset-progress-btn" class="reset-button" style="display: none;">
+                            <i class="fas fa-redo"></i> Сбросить прогресс
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <section class="theory-section">
+            <div class="container">
+                <h2 id="theory_fit" class="section-title">Теория фитнеса</h2>
+                
+                <div class="theory-grid">
+                    <!-- Тема 1: Мышечные волокна -->
+                    <div class="theory-topic">
+                        <div class="topic-content-wrapper">
+                            <div class="topic-header-row">
+                                <div class="topic-left">
+                                    <div class="topic-icon">
+                                        <i class="fas fa-brain"></i>
+                                    </div>
+                                    <div class="topic-title-content">
+                                        <h3>Мышечные волокна: типы и функции</h3>
+                                        <p class="topic-description">Быстрые и медленные мышечные волокна, их роль в силе и выносливости. Понимание структуры мышц для эффективных тренировок.</p>
+                                    </div>
+                                </div>
+                                <a href="theory/theory-1.html?topic=physio1" class="topic-study-btn-link" data-topic-id="physio1">
+                                    <button class="topic-study-btn">
+                                        <i class="fas fa-book"></i> Изучить
+                                    </button>
+                                </a>
+                            </div>
+                            <div class="topic-meta">
+                                <span class="topic-category"><i class="fas fa-dumbbell"></i> Физиология</span>
+                                <span class="topic-difficulty"><i class="fas fa-chart-line"></i> Средняя</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Тема 2: Прогрессия нагрузок -->
+                    <div class="theory-topic">
+                        <div class="topic-content-wrapper">
+                            <div class="topic-header-row">
+                                <div class="topic-left">
+                                    <div class="topic-icon">
+                                        <i class="fas fa-chart-line"></i>
+                                    </div>
+                                    <div class="topic-title-content">
+                                        <h3>Принцип прогрессии нагрузок</h3>
+                                        <p class="topic-description">Как правильно увеличивать вес, подходы и повторения для постоянного роста. Ключевой принцип в методологии тренировок.</p>
+                                    </div>
+                                </div>
+                                <a href="theory/theory-2.html?topic=method1" class="topic-study-btn-link" data-topic-id="method1">
+                                    <button class="topic-study-btn">
+                                        <i class="fas fa-book"></i> Изучить
+                                    </button>
+                                </a>
+                            </div>
+                            <div class="topic-meta">
+                                <span class="topic-category"><i class="fas fa-cogs"></i> Методология</span>
+                                <span class="topic-difficulty"><i class="fas fa-user-graduate"></i> Начальная</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Тема 3: Техника и безопасность -->
+                    <div class="theory-topic">
+                        <div class="topic-content-wrapper">
+                            <div class="topic-header-row">
+                                <div class="topic-left">
+                                    <div class="topic-icon">
+                                        <i class="fas fa-shield-alt"></i>
+                                    </div>
+                                    <div class="topic-title-content">
+                                        <h3>Правильная техника и профилактика травм</h3>
+                                        <p class="topic-description">Основные принципы безопасности при выполнении упражнений. Как избежать травм и тренироваться эффективно.</p>
+                                    </div>
+                                </div>
+                                <a href="theory/theory-3.html?topic=safety1" class="topic-study-btn-link" data-topic-id="safety1">
+                                    <button class="topic-study-btn">
+                                        <i class="fas fa-book"></i> Изучить
+                                    </button>
+                                </a>
+                            </div>
+                            <div class="topic-meta">
+                                <span class="topic-category"><i class="fas fa-heartbeat"></i> Безопасность</span>
+                                <span class="topic-difficulty"><i class="fas fa-user"></i> Начальная</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+        <footer class="footer">
+        <div class="container-footer">
+            <div class="footer-content">
+                <div class="footer-links">
+                    <h4>Разделы</h4>
+                    <a href="body.html">3D-Модель</a>
+                    <a href="training.html">Тренировки</a>
+                    <a href="place.html">Места посещения</a>
+                </div>
+                <div class="footer-links">
+                    <h4>Ресурсы</h4>
+                    <a href="food.html">Питание</a>
+                    <a href="equip.html">Экипировка</a>
+                    <a href="docs.html">Документация</a>
+                </div>
+                <div class="footer-links footer-contacts">
+                <h4>Контакты</h4>
+                <div class="contacts-container">
+                    <a href="https://vk.com/FIT_GY" target="_blank" class="contact-link">
+                        <i class="contact-icon fab fa-vk"></i>
+                        <span>ВКонтакте</span>
+                    </a>
+                    <a href="https://t.me/FIT_GY" target="_blank" class="contact-link">
+                        <i class="contact-icon fab fa-telegram"></i>
+                        <span>Telegram</span>
+                    </a>
+                    <a href="mailto:fitngy@gmail.com?subject=Вопрос&body=Здравствуйте!" class="contact-link">
+                        <span>Написать писмьо</span>
+                    </a>
+                </div>
+            </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 FitGy. Все права защищены.</p>
+            </div>
+        </div>
+    </footer>
+    <script type="module">
+        document.addEventListener('DOMContentLoaded', function() {
+            const urlParams = new URLSearchParams(window.location.search);
+            const section = urlParams.get('section');
+            
+            if (section === 'theory') {
+                // Прокручиваем к секции теории
+                const theorySection = document.getElementById('theory_fit');
+                if (theorySection) {
+                    setTimeout(() => {
+                        theorySection.scrollIntoView({ 
+                            behavior: 'smooth', 
+                            block: 'start' 
+                        });
+                    }, 500);
+                }
+            }
+        });
+    </script>
+    <script type="module" src="../js/auth-state.js"></script>
+    <script type="module" src="../js/training.js"></script>
+    <!-- Модальное окно подтверждения сброса прогресса -->
+<div id="confirm-modal" class="modal">
+    <div class="modal-content">
+        <h3>Сбросить прогресс?</h3>
+        <p>Вы уверены, что хотите сбросить весь прогресс по изученным темам? Это действие нельзя отменить.</p>
+        <div class="modal-buttons">
+            <button id="modal-confirm" class="modal-btn confirm-btn">Сбросить</button>
+            <button id="modal-cancel" class="modal-btn cancel-btn">Отмена</button>
+        </div>
+    </div>
+</div>
+</body>
+</html>

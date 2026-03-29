@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Упражнения по мышцам | FitGy</title>
+    <link rel="stylesheet" href="../css/muscle-exercises.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script type="module" src="../js/auth-state.js"></script>
+</head>
+<body>
+    <header class="header">
+    <div class="container">
+        <nav class="nav">
+            <ul class="nav-list">
+                <li class="nav-logo">
+                    <a href="../index.html">
+                        <img src="../img/logo/logo.png" alt="Логотип FitGy">
+                    </a>
+                </li>
+
+                <ul class="nav-center">
+                    <li><a href="body.html">3D-Модель</a></li>
+                    <li><a href="training.html">Тренировки</a></li>
+                    <li><a href="food.html">Питание</a></li>
+                    <li><a href="equip.html">Экипировка</a></li>
+                    <li><a href="place.html">Места тренировок</a></li>
+                </ul>
+
+                <li class="nav-auth">
+                    <a href="login.html" id="auth-icon" class="auth-icon-hidden">
+                        <img src="../img/logo/auth.png" alt="Авторизация">
+                    </a>
+                    <a href="profile.html" id="profile-icon" class="auth-icon-hidden">
+                        <img src="../img/logo/profile.png" alt="Профиль">
+                    </a>
+                </li>
+            </ul>
+        </nav>
+    </div>
+</header>
+
+    <main class="main">
+        <section class="exercises-hero">
+            <div class="container">
+                <div class="container">
+                <div class="page-header">
+                    <h1 class="page-title">Упражнения по группам мышц</h1>
+                <p class="page-description">Выберите группу мышц для просмотра упражнений</p>
+                </div>
+
+                
+                <div class="search-box">
+                    <i class="fas fa-search"></i>
+                    <input type="text" id="exercise-search" placeholder="Поиск упражнений (название, описание, мышца)">
+                    <button class="search-btn" id="search-btn">Найти</button>
+                </div>
+                <div id="search-results-count" class="search-results-count" style="display: none;"></div>
+            </div>
+        </section>
+
+        <section class="muscle-filter">
+            <div class="container">
+                <div class="filter-header">
+                    <h2 class="filter-title">
+                        <i class="fas fa-filter"></i> Фильтр по локализации мышц
+                    </h2>
+                    <div class="filter-actions">
+                        <button class="filter-btn active" data-filter="all">Все мышцы</button>
+                        <button class="filter-btn" data-filter="upper">Верхняя часть тела</button>
+                        <button class="filter-btn" data-filter="lower">Нижняя часть тела</button>
+                        <button class="filter-btn" data-filter="core">Корпус</button>
+                        <button class="filter-btn" data-filter="head">Голова и шея</button>
+                        <button class="filter-btn" data-filter="fullbody">Все тело</button>
+                    </div>
+                </div>
+
+                <div id="no-results-message" class="no-results-message hidden">
+                    <i class="fas fa-search"></i>
+                    <h3>Ничего не найдено</h3>
+                    <p>Попробуйте изменить поисковый запрос или выбрать другую категорию</p>
+                </div>
+
+                <div class="muscle-groups">
+                    <!-- Контейнеры для групп мышц будут заполняться JavaScript -->
+                </div>
+            </div>
+        </section>
+    </main>
+<footer class="footer">
+        <div class="container-footer">
+            <div class="footer-content">
+                <div class="footer-links">
+                    <h4>Разделы</h4>
+                    <a href="body.html">3D-Модель</a>
+                    <a href="training.html">Тренировки</a>
+                    <a href="place.html">Места посещения</a>
+                </div>
+                <div class="footer-links">
+                    <h4>Ресурсы</h4>
+                    <a href="food.html">Питание</a>
+                    <a href="equip.html">Экипировка</a>
+                    <a href="docs.html">Документация</a>
+                </div>
+                <div class="footer-links footer-contacts">
+                <h4>Контакты</h4>
+                <div class="contacts-container">
+                    <a href="https://vk.com/FIT_GY" target="_blank" class="contact-link">
+                        <i class="contact-icon fab fa-vk"></i>
+                        <span>ВКонтакте</span>
+                    </a>
+                    <a href="https://t.me/FIT_GY" target="_blank" class="contact-link">
+                        <i class="contact-icon fab fa-telegram"></i>
+                        <span>Telegram</span>
+                    </a>
+                    <a href="mailto:fitngy@gmail.com?subject=Вопрос&body=Здравствуйте!" class="contact-link">
+                        <span>Написать писмьо</span>
+                    </a>
+                </div>
+            </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 FitGy. Все права защищены.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Сначала загружаем базу данных упражнений -->
+    <script src="../js/exercises.js"></script>
+    <!-- Затем загружаем скрипт для отображения упражнений -->
+    <script src="../js/musciles_exercises.js"></script>
+</body>
+</html>

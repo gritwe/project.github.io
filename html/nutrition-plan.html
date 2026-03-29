@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Генератор плана питания | FitGy</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/nutrition-plan.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+</head>
+<body>
+
+    <header class="header">
+        <div class="container">
+            <nav class="nav">
+                <ul class="nav-list">
+                    <li class="nav-logo">
+                        <a href="../index.html">
+                            <img src="../img/logo/logo.png" alt="Логотип FitGy">
+                        </a>
+                    </li>
+
+                    <ul class="nav-center">
+                        <li><a href="body.html">3D-Модель</a></li>
+                        <li><a href="training.html">Тренировки</a></li>
+                        <li><a href="food.html">Питание</a></li>
+                        <li><a href="equip.html">Экипировка</a></li>
+                        <li><a href="place.html">Места тренировок</a></li>
+                    </ul>
+
+                    <li class="nav-auth">
+                        <a href="login.html" id="auth-icon" class="auth-icon-hidden">
+                            <img src="../img/logo/auth.png" alt="Авторизация">
+                        </a>
+                        <a href="profile.html" id="profile-icon" class="auth-icon-hidden">
+                            <img src="../img/logo/profile.png" alt="Профиль">
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+<main class="nutrition-plan-new">
+    <div class="container">
+        <div class="plan-header">
+            <h1 class="page-title">
+                <i class="fas fa-utensils"></i> Генератор плана питания
+            </h1>
+            <div class="header-actions">
+                <button class="btn btn-primary" id="newPlanBtn">
+                    <i class="fas fa-plus"></i> Новый план
+                </button>
+            </div>
+        </div>
+
+        <!-- Шаг 1: Основные параметры -->
+        <div class="setup-section active" id="setupSection">
+            <div class="section-header">
+                <h2><span class="step-number">1</span> Основные параметры</h2>
+            </div>
+            
+            <div class="setup-grid">
+                <!-- Цели по БЖУ -->
+                <div class="setup-card">
+                    <h3><i class="fas fa-bullseye"></i> Ваши цели по БЖУ</h3>
+                    <div class="bju-targets">
+                        <div class="bju-target">
+                            <label for="targetCalories">
+                                <i class="fas fa-fire"></i> Калории (ккал)
+                            </label>
+                            <div class="input-with-help">
+                                <input type="number" id="targetCalories" min="1000" max="5000" step="50" value="2000">
+                            </div>
+                        </div>
+                        <div class="bju-target">
+                            <label for="targetProtein">
+                                <i class="fas fa-dumbbell"></i> Белки (г)
+                            </label>
+                            <div class="input-with-help">
+                                <input type="number" id="targetProtein" min="30" max="300" step="5" value="100">
+                            </div>
+                        </div>
+                        <div class="bju-target">
+                            <label for="targetFat">
+                                <i class="fas fa-oil-can"></i> Жиры (г)
+                            </label>
+                            <div class="input-with-help">
+                                <input type="number" id="targetFat" min="20" max="150" step="5" value="70">
+                            </div>
+                        </div>
+                        <div class="bju-target">
+                            <label for="targetCarbs">
+                                <i class="fas fa-bread-slice"></i> Углеводы (г)
+                            </label>
+                            <div class="input-with-help">
+                                <input type="number" id="targetCarbs" min="100" max="500" step="10" value="250">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="bju-actions">
+                        <a href="training.html" class="btn btn-secondary btn-sm">
+                            <i class="fas fa-calculator"></i> Рассчитать БЖУ
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Настройки питания -->
+                <div class="setup-card">
+                    <h3><i class="fas fa-sliders-h"></i> Настройки питания</h3>
+                    
+                    <div class="settings-group">
+                        <h4><i class="fas fa-clock"></i> Количество приемов пищи</h4>
+                        <div class="meal-count-selector">
+                            <label class="meal-count-option">
+                                <input type="radio" name="mealCount" value="3" checked>
+                                <span class="meal-count-label">3 раза</span>
+                                <span class="meal-count-time">8:00 • 13:00 • 19:00</span>
+                            </label>
+                            <label class="meal-count-option">
+                                <input type="radio" name="mealCount" value="4">
+                                <span class="meal-count-label">4 раза</span>
+                                <span class="meal-count-time">8:00 • 13:00 • 16:00 • 19:00</span>
+                            </label>
+                            <label class="meal-count-option">
+                                <input type="radio" name="mealCount" value="5">
+                                <span class="meal-count-label">5 раз</span>
+                                <span class="meal-count-time">8:00 • 11:00 • 14:00 • 17:00 • 20:00</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="settings-group">
+                        <h4><i class="fas fa-calendar"></i> Продолжительность</h4>
+                        <div class="duration-selector">
+                            <label class="duration-option">
+                                <input type="radio" name="duration" value="7" checked>
+                                <span class="duration-label">7 дней (неделя)</span>
+                            </label>
+                            <label class="duration-option">
+                                <input type="radio" name="duration" value="14">
+                                <span class="duration-label">14 дней <br>(2 недели)</span>
+                            </label>
+                            <label class="duration-option">
+                                <input type="radio" name="duration" value="30">
+                                <span class="duration-label">30 дней (месяц)</span>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Ограничения и предпочтения -->
+                <div class="setup-card">
+                    <h3><i class="fas fa-ban"></i> Ограничения и предпочтения</h3>
+                    
+                    <div class="settings-group">
+                        <h4><i class="fas fa-exclamation-triangle"></i> Исключить продукты</h4>
+                        <div class="restrictions-grid">
+                            <label class="restriction-checkbox">
+                                <input type="checkbox" value="pork">
+                                <span>Свинина</span>
+                            </label>
+                            <label class="restriction-checkbox">
+                                <input type="checkbox" value="fish">
+                                <span>Рыба и морепродукты</span>
+                            </label>
+                            <label class="restriction-checkbox">
+                                <input type="checkbox" value="milk">
+                                <span>Молочные продукты</span>
+                            </label>
+                            <label class="restriction-checkbox">
+                                <input type="checkbox" value="gluten">
+                                <span>Глютен</span>
+                            </label>
+                            <label class="restriction-checkbox">
+                                <input type="checkbox" value="nuts">
+                                <span>Орехи</span>
+                            </label>
+                            <label class="restriction-checkbox">
+                                <input type="checkbox" value="eggs">
+                                <span>Яйца</span>
+                            </label>
+                            <label class="restriction-checkbox">
+                                <input type="checkbox" value="soy">
+                                <span>Соя</span>
+                            </label>
+                            <label class="restriction-checkbox">
+                                <input type="checkbox" value="honey">
+                                <span>Мед</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="settings-group">
+                        <h4><i class="fas fa-heart"></i> Любимые продукты</h4>
+                        <div class="favorites-input">
+                            <input type="text" id="favoriteFoods" 
+                                   placeholder="Введите продукты через запятую (курица, рис, яблоки...)">
+                        </div>
+                    </div>
+
+                    <div class="settings-group">
+                        <h4><i class="fas fa-weight"></i> Тип диеты</h4>
+                        <select id="dietType" class="diet-select">
+                            <option value="balanced">Сбалансированное питание</option>
+                            <option value="keto">Кето/Низкоуглеводная</option>
+                            <option value="high_protein">Высокобелковая</option>
+                            <option value="low_fat">Низкожировая</option>
+                            <option value="vegetarian">Вегетарианская</option>
+                            <option value="vegan">Веганская</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section-footer">
+                <button class="btn btn-primary btn-lg" id="generatePlanBtn">
+                    <i class="fas fa-magic"></i> Сгенерировать план
+                </button>
+            </div>
+        </div>
+
+        <!-- Шаг 2: Редактирование плана -->
+        <div class="plan-section" id="planSection">
+            <div class="section-header">
+                <h2><span class="step-number">2</span> Ваш план питания</h2>
+                <div class="plan-actions">
+                    <button class="btn btn-outline" id="backToSetupBtn">
+                        <i class="fas fa-arrow-left"></i> Назад к настройкам
+                    </button>
+                    <button class="btn btn-info" id="downloadShoppingListBtn">
+                        <i class="fas fa-download"></i> Скачать список покупок
+                    </button>
+                    <button class="btn btn-success" id="savePlanBtn">
+                        <i class="fas fa-save"></i> Сохранить план
+                    </button>
+                </div>
+            </div>
+
+            <div class="plan-controls">
+                <div class="week-navigation">
+                    <button class="nav-btn" id="prevWeekBtn">
+                        <i class="fas fa-chevron-left"></i>
+                    </button>
+                    <div class="week-info">
+                        <span id="currentWeek">Неделя 1</span>
+                        <span id="weekDates">1-7 января</span>
+                    </div>
+                    <button class="nav-btn" id="nextWeekBtn">
+                        <i class="fas fa-chevron-right"></i>
+                    </button>
+                </div>
+
+                <div class="day-navigation">
+                    <button class="day-btn" data-day="1" data-week="1">Пн</button>
+                    <button class="day-btn active" data-day="2" data-week="1">Вт</button>
+                    <button class="day-btn" data-day="3" data-week="1">Ср</button>
+                    <button class="day-btn" data-day="4" data-week="1">Чт</button>
+                    <button class="day-btn" data-day="5" data-week="1">Пт</button>
+                    <button class="day-btn" data-day="6" data-week="1">Сб</button>
+                    <button class="day-btn" data-day="7" data-week="1">Вс</button>
+                </div>
+
+                <div class="plan-summary">
+                    <div class="summary-card">
+                        <span class="summary-label">Цель калорий</span>
+                        <span class="summary-value" id="goalCalories">2000</span>
+                    </div>
+                    <div class="summary-card">
+                        <span class="summary-label">Факт калорий</span>
+                        <span class="summary-value" id="actualCalories">0</span>
+                    </div>
+                    <div class="summary-card">
+                        <span class="summary-label">Разница</span>
+                        <span class="summary-value" id="calorieDiff">0</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="day-plan">
+                <div class="day-header">
+                    <h3 id="currentDayName">Понедельник</h3>
+                    <span id="currentDate">1 января</span>
+                </div>
+
+                <div class="meals-grid" id="mealsGrid">
+                    <!-- Места для приемов пищи будут заполнены JavaScript -->
+                </div>
+
+                <div class="day-summary">
+                    <div class="bju-summary">
+                        <div class="bju-item">
+                            <span class="bju-label">Белки</span>
+                            <div class="bju-bar">
+                                <div class="bju-progress" id="proteinProgress" style="width: 0%"></div>
+                            </div>
+                            <span class="bju-value">
+                                <span id="proteinActual">0</span>г / <span id="proteinTarget">100</span>
+                            </span>
+                        </div>
+                        <div class="bju-item">
+                            <span class="bju-label">Жиры</span>
+                            <div class="bju-bar">
+                                <div class="bju-progress" id="fatProgress" style="width: 0%"></div>
+                            </div>
+                            <span class="bju-value">
+                                <span id="fatActual">0</span>г / <span id="fatTarget">70</span>
+                            </span>
+                        </div>
+                        <div class="bju-item">
+                            <span class="bju-label">Углеводы</span>
+                            <div class="bju-bar">
+                                <div class="bju-progress" id="carbsProgress" style="width: 0%"></div>
+                            </div>
+                            <span class="bju-value">
+                                <span id="carbsActual">0</span>г / <span id="carbsTarget">250</span>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+
+<!-- Модальное окно для рецептов -->
+<div class="modal-overlay" id="recipeModal">
+    <div class="modal-content">
+        <div class="modal-header">
+            <h3 id="recipeModalTitle">Рецепт</h3>
+            <button class="modal-close" id="closeRecipeModal">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+        <div class="modal-body" id="recipeModalBody">
+            <!-- Контент рецепта -->
+        </div>
+    </div>
+</div>
+
+<!-- Модальное окно для добавления рецепта -->
+<div class="modal-overlay" id="addRecipeModal">
+    <div class="modal-content">
+        <div class="modal-header">
+            <h3>Добавить блюдо</h3>
+            <button class="modal-close" id="closeAddRecipeModal">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+        <div class="modal-body">
+            <div class="recipe-search">
+                <input type="text" id="recipeSearchInput" 
+                       placeholder="Поиск рецептов..." 
+                       class="search-input">
+                <button class="search-btn">
+                    <i class="fas fa-search"></i>
+                </button>
+            </div>
+            
+            <div class="recipe-categories" id="recipeCategories">
+                <!-- Категории будут заполнены JavaScript -->
+            </div>
+            
+            <div class="recipes-list" id="recipesList">
+                <!-- Список рецептов будет заполнен JavaScript -->
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Модальное окно для редактирования порции -->
+<div class="modal-overlay" id="portionModal">
+    <div class="modal-content">
+        <div class="modal-header">
+            <h3>Настройка порции</h3>
+            <button class="modal-close" id="closePortionModal">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+        <div class="modal-body">
+            <div class="portion-info">
+                <h4 id="portionRecipeName">Название рецепта</h4>
+                <div class="portion-nutrition">
+                    <div class="nutrition-item">
+                        <span>Калории:</span>
+                        <span id="portionCalories">0</span>
+                    </div>
+                    <div class="nutrition-item">
+                        <span>Белки:</span>
+                        <span id="portionProtein">0г</span>
+                    </div>
+                    <div class="nutrition-item">
+                        <span>Жиры:</span>
+                        <span id="portionFat">0г</span>
+                    </div>
+                    <div class="nutrition-item">
+                        <span>Углеводы:</span>
+                        <span id="portionCarbs">0г</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="portion-controls">
+                <div class="portion-slider">
+                    <label for="portionSize">Размер порции (г):</label>
+                    <input type="range" id="portionSize" min="50" max="500" step="10" value="100">
+                    <span id="portionValue">100 г</span>
+                </div>
+                
+                <div class="portion-buttons">
+                    <button class="btn btn-secondary" id="portionSaveBtn">Сохранить</button>
+                    <button class="btn btn-danger" id="portionRemoveBtn">Удалить</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<footer class="footer">
+        <div class="container-footer">
+            <div class="footer-content">
+                <div class="footer-links">
+                    <h4>Разделы</h4>
+                    <a href="body.html">3D-Модель</a>
+                    <a href="training.html">Тренировки</a>
+                    <a href="place.html">Места посещения</a>
+                </div>
+                <div class="footer-links">
+                    <h4>Ресурсы</h4>
+                    <a href="food.html">Питание</a>
+                    <a href="equip.html">Экипировка</a>
+                    <a href="docs.html">Документация</a>
+                </div>
+                <div class="footer-links footer-contacts">
+                <h4>Контакты</h4>
+                <div class="contacts-container">
+                    <a href="https://vk.com/FIT_GY" target="_blank" class="contact-link">
+                        <i class="contact-icon fab fa-vk"></i>
+                        <span>ВКонтакте</span>
+                    </a>
+                    <a href="https://t.me/FIT_GY" target="_blank" class="contact-link">
+                        <i class="contact-icon fab fa-telegram"></i>
+                        <span>Telegram</span>
+                    </a>
+                    <a href="mailto:fitngy@gmail.com?subject=Вопрос&body=Здравствуйте!" class="contact-link">
+                        <span>Написать писмьо</span>
+                    </a>
+                </div>
+            </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 FitGy. Все права защищены.</p>
+            </div>
+        </div>
+    </footer>
+<script type="module" src="../js/auth-state.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+<script type="module" src="../js/nutrition-plan-generator.js"></script>
+</body>
+</html>

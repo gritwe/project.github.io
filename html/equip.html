@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Экипировка - FitGy</title>
+    
+    <!-- Стили -->
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/equip.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Скрипт авторизации -->
+    <script type="module" src="../js/auth-state.js"></script>
+</head>
+<body>
+    <!-- Хедер с авторизацией -->
+    <header class="header">
+        <div class="container">
+            <nav class="nav">
+                <ul class="nav-list">
+                    <li class="nav-logo">
+                        <a href="../index.html">
+                            <img src="../img/logo/logo.png" alt="Логотип FitGy">
+                        </a>
+                    </li>
+
+                    <ul class="nav-center">
+                        <li><a href="body.html">3D-Модель</a></li>
+                        <li><a href="training.html">Тренировки</a></li>
+                        <li><a href="food.html">Питание</a></li>
+                        <li><a class="active" href="equip.html">Экипировка</a></li>
+                        <li><a href="place.html">Места тренировок</a></li>
+                    </ul>
+
+                    <li class="nav-auth">
+                    <a href="html/login.html" id="auth-icon" class="auth-icon-hidden">
+                        <img src="../img/logo/auth.png" alt="Авторизация">
+                    </a>
+                    <a href="html/profile.html" id="profile-icon" class="auth-icon-hidden">
+                        <img src="../img/logo/profile.png" alt="Профиль">
+                    </a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="equipment-page">
+        <div class="container">
+            <div class="page-header">
+                <h1 class="page-title">Изучите различные <br>виды инвенатря <br>для занятий спортом</h1>
+            </div>
+        </div>
+
+        <div class="equipment-filters">
+            <div class="filter-buttons">
+                <button class="filter-btn active" data-filter="all">Всё</button>
+                <button class="filter-btn" data-filter="home">Домашние</button>
+                <button class="filter-btn" data-filter="outdoor">Уличные</button>
+                <button class="filter-btn" data-filter="gym">Зал</button>
+                <button class="filter-btn" data-filter="accessories">Аксессуары</button>
+            </div>
+        </div>
+        
+        <!-- Сетка с инвентарем -->
+        <div class="equipment-grid" id="equipment-container">
+            <!-- Карточки будут добавляться с помощью JavaScript -->
+        </div>
+        
+        <!-- Пагинация -->
+        <div class="pagination" id="pagination">
+            <!-- Кнопки пагинации будут добавляться с помощью JavaScript -->
+        </div>
+    </main>
+    <footer class="footer">
+        <div class="container-footer">
+            <div class="footer-content">
+                <div class="footer-links">
+                    <h4>Разделы</h4>
+                    <a href="body.html">3D-Модель</a>
+                    <a href="training.html">Тренировки</a>
+                    <a href="place.html">Места посещения</a>
+                </div>
+                <div class="footer-links">
+                    <h4>Ресурсы</h4>
+                    <a href="food.html">Питание</a>
+                    <a href="equip.html">Экипировка</a>
+                    <a href="docs.html">Документация</a>
+                </div>
+                <div class="footer-links footer-contacts">
+                <h4>Контакты</h4>
+                <div class="contacts-container">
+                    <a href="https://vk.com/FIT_GY" target="_blank" class="contact-link">
+                        <i class="contact-icon fab fa-vk"></i>
+                        <span>ВКонтакте</span>
+                    </a>
+                    <a href="https://t.me/FIT_GY" target="_blank" class="contact-link">
+                        <i class="contact-icon fab fa-telegram"></i>
+                        <span>Telegram</span>
+                    </a>
+                    <a href="mailto:fitngy@gmail.com?subject=Вопрос&body=Здравствуйте!" class="contact-link">
+                        <span>Написать писмьо</span>
+                    </a>
+                </div>
+            </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 FitGy. Все права защищены.</p>
+            </div>
+        </div>
+    </footer>
+    <!-- Скрипт для работы страницы -->
+    <script type="module" src="../js/equip.js"></script>
+</body>
+</html>
